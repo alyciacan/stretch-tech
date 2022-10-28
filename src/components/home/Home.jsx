@@ -1,0 +1,3 @@
+import getAllArt from '../../apiCalls';
+
+
