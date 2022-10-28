@@ -4,6 +4,9 @@ import "./Form.css"
 const Form = () => {
   const [sentence, setSentence] = useState("");
 
+  const handleChange = (event) => {
+    setSentence(event.currentTarget.value);
+  };
 
   return (
     <form className="form-container">
