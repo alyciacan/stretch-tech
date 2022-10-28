@@ -7,9 +7,9 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  background: rgba(43, 42, 42, 0.721);
-  box-shadow: 0px 4px 15px -4px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  background: rgba(241, 237, 237, 0.995);
+  box-shadow: 0px 4px 15px -4px rgba(234, 134, 12, 0.893);
+  border-radius: 1em;
 }
 
 .individual-painting-img {
@@ -34,11 +34,11 @@
   text-align: center;
   font-weight: bolder;
   font-size: xx-large;
-  /* padding-left: 2em;
-  padding-right: 2em; */
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
-.painting-author {
+.individual-painting-author {
   display: flex;
   color: black;
   justify-content: center;
@@ -46,16 +46,25 @@
   font-size: large;
   font-style: italic;
   font-weight: bold;
-  /* padding-left: 2em;
-  padding-right: 2em; */
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .individual-painting-description {
   display: flex;
-  color: white;
   justify-content: center;
   text-align: center;
+  color: black;
   font-size: large;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.individual-painting-date {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: black;
   padding-left: 2em;
   padding-right: 2em;
 }
