@@ -1,8 +1,9 @@
-
+import React, { useState } from "react";
 import "./Form.css"
 
 const Form = () => {
- 
+  const [sentence, setSentence] = useState("");
+
 
   return (
     <form className="form-container">
