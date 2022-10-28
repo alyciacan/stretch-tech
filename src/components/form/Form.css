@@ -1,0 +1,15 @@
+.form-container{
+    margin-top: 2rem;
+}
+.meme-input,
+.meme-save-button{
+    border-radius: 8px;
+    height: 2rem;
+    width: 20rem;
+}
+
+.meme-save-button{
+    margin-left: .5rem;
+    height: 2.5rem;
+    width: 8rem;
+}
