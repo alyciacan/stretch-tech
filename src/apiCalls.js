@@ -1,10 +1,11 @@
 const checkResponse = (response) => {
-    if(!Response.ok) {
-        throw new Error(
-            `Error: ${response.status}`
-        )
-    }
-    return response.json();
+    // if(!Response.ok) {
+    //     throw new Error(
+    //         `Error: ${response.status}`
+    //     )
+    // }
+    const resp = response.json()
+    return resp
 };
 
 const getAllArt = () => {
@@ -17,4 +18,4 @@ const getSinglePainting = (id) => {
         .then(response => checkResponse(response))
 };
 
-export { getArt, getSinglePainting};
+export { getAllArt, getSinglePainting };
