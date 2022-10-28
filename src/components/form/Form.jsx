@@ -14,7 +14,13 @@ const Form = () => {
     return maxLength
   }
 
-  
+  const handleColor = () => {
+    if(handleMax() < 20){
+        return ({
+            color: "red"
+        })
+    }
+  }
 
   return (
     <div>
