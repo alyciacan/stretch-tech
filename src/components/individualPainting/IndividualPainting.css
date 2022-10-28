@@ -1,0 +1,70 @@
+.individual-painting {
+  box-sizing: border-box;
+  display: flex;
+  margin: auto;
+  margin-left: 6em;
+  margin-right: 6em;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(241, 237, 237, 0.995);
+  box-shadow: 0px 4px 15px -4px rgba(234, 134, 12, 0.893);
+  border-radius: 1em;
+}
+
+.individual-painting-img {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  height: auto;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.painting-details {
+  display:flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 10px;
+}
+
+.individual-painting-title {
+  display: flex;
+  color: black;
+  justify-content: center;
+  text-align: center;
+  font-weight: bolder;
+  font-size: xx-large;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.individual-painting-author {
+  display: flex;
+  color: black;
+  justify-content: center;
+  text-align: center;
+  font-size: large;
+  font-style: italic;
+  font-weight: bold;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.individual-painting-description {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  font-size: large;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.individual-painting-date {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  padding-left: 2em;
+  padding-right: 2em;
+}

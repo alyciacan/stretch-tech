@@ -17,4 +17,4 @@ const getSinglePainting = (id) => {
         .then(response => checkResponse(response))
 };
 
-export { getArt, getSinglePainting};
+export { getAllArt, getSinglePainting};
