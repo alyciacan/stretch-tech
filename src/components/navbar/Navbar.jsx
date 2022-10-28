@@ -1,14 +1,15 @@
 import './Navbar.css';
-import { Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <Link to='/' >
-                <img src='' alt="Art Party logo"/>
-            </Link>
-            <NavLink />
-            <hr />
+            <Router>
+                <Link to='/' >
+                    <img src='' alt="Art Party logo"/>
+                </Link>
+                <NavLink to="/gallery" className="link">my gallery</NavLink>
+            </Router>
         </nav>
     )
 }
