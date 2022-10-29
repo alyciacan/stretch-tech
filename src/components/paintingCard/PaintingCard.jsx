@@ -1,23 +1,15 @@
 import React from 'react'
 import './PaintingCard.css'
 
-const PaintingCard = ({images}) => {
-  const allImages = images.map((image) => {
-    const {url} = image.webImage
-    const {id, title} = image
+const PaintingCard = ({url, name, id}) => {  
     return (
-    <div className='image'>
-    <img key={id} className="images" src={url}/>
-    <p className='card-titles'>{title}</p>
-    </div>
-    )
-});
-
-  return (
-    <div className='cards-container'>
-      {allImages}
-    </div>
-  )
+      <section className='cards-container'>
+        <img className='images' src={url} />
+        <p className='card-titles'>{name}</p>
+        {/* <p>{ FORMTEXT }</p> */}
+        {/* <button onClick={}>Delete</button> */}
+      </section>
+    );
 }
 
 export default PaintingCard

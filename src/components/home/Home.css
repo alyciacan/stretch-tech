@@ -19,6 +19,8 @@
 }
 
 .images-container{
+    display: flex;
+    flex-wrap: wrap;
     width: 75vw;
 }
 .images{
