@@ -6,13 +6,12 @@ const Form = () => {
 
   const handleChange = (event) => {
     setSentence(event.currentTarget.value);
-
   };
 
   const handleMax = () => {
     const maxLength = 50 - sentence.length
     return maxLength
-  }
+  };
 
   const handleColor = () => {
     if(handleMax() < 20){
@@ -20,7 +19,7 @@ const Form = () => {
             color: "red"
         })
     }
-  }
+  };
 
   return (
     <div>
