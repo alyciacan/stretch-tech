@@ -6,10 +6,10 @@ const Navbar = () => {
     return (
         <Router>
             <nav className="navbar">
-                <Link to='/' className="logo-link">
-                    <img src={ logo } alt="Art Party logo"/>
+                <Link to='/' className="navbar-link">
+                    <img src={ logo } alt="Art Party logo" className="logo-img"/>
                 </Link>
-                <NavLink to="/gallery" className="link">my gallery</NavLink>
+                <NavLink to="/gallery" className="navbar-link">my gallery</NavLink>
             </nav>
         </Router>
     )
