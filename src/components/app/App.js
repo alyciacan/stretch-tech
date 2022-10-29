@@ -1,14 +1,14 @@
 import './App.css';
+import Home from '../home/Home';
 import Form from '../form/Form';
-import PaintingCard from '../paintingCard/PaintingCard'
-import IndividualPainting from '../individualPainting/IndividualPainting'
+import Navbar from '../navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Form />
-      {/* <PaintingCard /> */}
-      {/* <IndividualPainting /> */}
+      <Navbar />
+      <Home/>
+      <Form/>
     </div>
   );
 }

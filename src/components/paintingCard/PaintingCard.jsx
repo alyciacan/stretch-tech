@@ -1,14 +1,21 @@
 import React from 'react'
 import './PaintingCard.css'
 
-const PaintingCard = () => {
-  const { id , title, description, date } = artObject.label
-  const { url } = artObject.webImage
+const PaintingCard = ({images}) => {
+  const allImages = images.map((image) => {
+    const {url} = image.webImage
+    const {id, title} = image
+    return (
+    <div className='image'>
+    <img key={id} className="images" src={url}/>
+    <p className='card-titles'>{title}</p>
+    </div>
+    )
+});
 
   return (
-    <div className='painting-card' id={} >
-    <img className='card-imgs' src={url} alt={} />
-    <h3 className='card-titles'>{}</h3>
+    <div className='cards-container'>
+    {allImages}
     </div>
   )
 }
