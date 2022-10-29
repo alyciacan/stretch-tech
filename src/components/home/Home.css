@@ -1,0 +1,35 @@
+.description-container,
+.description{
+    display: flex;
+}
+
+.description{
+    text-align: start;
+    flex-direction: column;
+    width: 25vw;
+}
+
+.description p, .description h1 {
+    margin-left: 2rem;
+}
+
+.description h1 {
+    margin-bottom: 0;
+    font-size: 8vw;
+}
+
+.images-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vw;
+}
+.images{
+    width: 250px;
+    height: 350px;
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+.right-arrow{
+    font-size: 4vw;
+}

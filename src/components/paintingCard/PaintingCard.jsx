@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './PaintingCard.css'
 
-const PaintingCard = () => {
-  return (
-      <section className='individual-painting' id={PaintingCard.id}>
-        <img className='individual-painting-img' alt={artObject.label.title} src={artObject.webImage.url}/>
-        <div className='painting-details'>
-        <h1 className='individual-painting-title'>{artObject.label.description}</h1>
-        <h2 className='painting-author'>{artObject.principalMakers[0].name}</h2>
-        <p className='individual-painting-description'>{artObject.label.description}</p>
-        </div>
-      </section> 
-  )
+const PaintingCard = ({url, name, id}) => {  
+    return (
+      <section className='cards-container'>
+        <img className='images' src={url} />
+        <p className='card-titles'>{name}</p>
+        {/* <p>{ FORMTEXT }</p> */}
+        {/* <button onClick={}>Delete</button> */}
+      </section>
+    );
 }
 
 export default PaintingCard

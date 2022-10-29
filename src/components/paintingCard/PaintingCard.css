@@ -1,61 +1,40 @@
-.individual-painting {
-  box-sizing: border-box;
+
+
+.cards-container {
   display: flex;
-  margin: auto;
-  margin-left: 6em;
-  margin-right: 6em;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  background: rgba(43, 42, 42, 0.721);
-  box-shadow: 0px 4px 15px -4px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  flex-wrap: wrap;
+  box-sizing: border-box; 
+  width: 75wv;
+  margin-left: 3rem;
+  margin-top: 3rem;
 }
 
-.individual-painting-img {
-  display: flex;
-  justify-content: center;
-  width: 60%;
-  height: auto;
-  border-radius: 10px 0px 0px 10px;
-}
-
-.painting-details {
+.image p {
   display:flex;
-  flex-direction: column;
-  padding: 5px;
-  margin: 10px;
+  flex-wrap: wrap;
+  width: 250px;
+  height: auto;
 }
 
-.individual-painting-title {
-  display: flex;
+.images {
+  width: 250px;
+  height: 350px;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.images:hover {
+  animation: pop 0.2s linear 1;
+  display:inline-block;
+  margin:0.4em;  padding:.2em;
+  transform: scale(1);
+  transition: all .4s ease-in-out;
+}
+
+.card-titles {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
   color: black;
-  justify-content: center;
-  text-align: center;
-  font-weight: bolder;
-  font-size: xx-large;
-  /* padding-left: 2em;
-  padding-right: 2em; */
-}
-
-.painting-author {
-  display: flex;
-  color: black;
-  justify-content: center;
-  text-align: center;
-  font-size: large;
-  font-style: italic;
-  font-weight: bold;
-  /* padding-left: 2em;
-  padding-right: 2em; */
-}
-
-.individual-painting-description {
-  display: flex;
-  color: white;
-  justify-content: center;
-  text-align: center;
-  font-size: large;
-  padding-left: 2em;
-  padding-right: 2em;
 }
