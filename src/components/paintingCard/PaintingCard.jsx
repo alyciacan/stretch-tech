@@ -15,7 +15,7 @@ const PaintingCard = ({images}) => {
 
   return (
     <div className='cards-container'>
-    {allImages}
+      {allImages}
     </div>
   )
 }
