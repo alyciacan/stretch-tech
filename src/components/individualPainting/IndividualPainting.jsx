@@ -9,35 +9,28 @@ const IndividualPainting = ({selectedId}) => {
     const findPainting = () => {
     getSinglePainting(selectedId)
       .then(response => {
-        console.log(response)
-        setPaintingObject(response.artObject)
+        const obj = {
+          id: response.artObject.id,
+          title: response.artObject.title, 
+          description: response.artObject.label.description,
+          img: response.artObject.webImage.url,
+          artist: response.artObject.principalMakers[0].name,
+          year: response.artObject.dating.presentingDate
+        }
+        setPaintingObject(obj)
         })
-        // .then(response => {
-
-        // })
     }
     findPainting()
   }, []);
-  console.log(paintingObject);
-
-  // setDetails = () => {
-  //   const { id , title, description, date } = image
-  //   const { url } = image.artObject.webImage
-  //   const { name } = image.artObject.principalMakers
-  //   const year = String(date).split('-')[0]
-  // };
-
+  const { id, title, description, img, artist, year } = paintingObject;
 
   return (
     <section className='individual-painting'>
-      <h1 className='individual-painting-title'>Title: {paintingObject.title}</h1>
-      {/* <img className='individual-painting-img' alt={paintingObject.title} /> */}
-      {/* <div className='painting-details'>
-
-        <h2 className='individual-painting-author'>Author: {name}</h2>
-        <p className='individual-painting-description'>{description}</p>
-        <p className='individual-painting-date'>Year: {year}</p>
-      </div> */}
+      <h1 className='individual-painting-title'>Title: {title}</h1>
+      <img className='individual-painting-img' src={img} alt={title}/>
+      <h2 className='individual-painting-author'>Artist: {artist}</h2>
+      <p className='individual-painting-description'>{description}</p>
+      <p className='individual-painting-date'>Year: {year}</p>
     </section> 
   )
 
