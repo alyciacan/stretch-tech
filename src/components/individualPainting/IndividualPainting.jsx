@@ -3,22 +3,21 @@ import { getSinglePainting } from '../../apiCalls';
 import './IndividualPainting.css'
 
 
-const PaintingCard = () => {
-  const [image, setImage] = useState({});
-  // console.log('home2')
-    useEffect(() => {
-      const findPainting = () => {
-        getSinglePainting("en-SK-A-4050").then(response => {
-          setImage(response.artObject)
-        })
-      }
-      findPainting()
-    }, {});
-
-const displayArt = () => {
-  // const { id , title, description, date } = artObject.label
-  // const { url } = artObject.webImage
-  // const { name } = artObject.principalMakers
+const IndividualPainting = ({selectedId}) => {
+  const [image, setImage] = useState([]);
+  useEffect(() => {
+    const findPainting = () => {
+    getSinglePainting(selectedId).then(response => {
+      setImage(response.artObject)
+      })
+    }
+    findPainting()
+  }, []);
+  console.log('image', image)
+    // const displayArt = () => {
+    //   const { id , title, description, date } = artObject.label
+    //   const { url } = artObject.webImage
+    //   const { name } = artObject.principalMakers
 
   // const year = String(date).split('-')[0]
 
@@ -34,6 +33,6 @@ const displayArt = () => {
     </section> 
   )
 }
-}
+// }
 
-export default PaintingCard
+export default IndividualPainting

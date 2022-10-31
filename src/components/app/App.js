@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Home/>
       <Form/>
-      <IndividualPainting/>
+      {/* <IndividualPainting/> */}
     </div>
   );
 }
