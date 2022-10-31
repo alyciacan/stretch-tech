@@ -2,6 +2,7 @@ import './App.css';
 import Home from '../home/Home';
 import Form from '../form/Form';
 import Navbar from '../navbar/Navbar';
+import PageNotFound from '../../pageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       <Home/>
       <Form/>
+      <PageNotFound/>
     </div>
   );
 }
