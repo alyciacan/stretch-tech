@@ -20,9 +20,7 @@ const Home = () => {
 	const handleClick = async (evt) => {
     setPainting(evt.target.id)
     console.log(evt.target.id)
-		let response = await getSinglePainting(evt.target.id)
-		console.log('response', response);
-		
+		let response = await getSinglePainting(evt.target.id)		
 	}
 
   return (
@@ -33,7 +31,7 @@ const Home = () => {
         Art Party is how the most sophisticated, discerning art history buffs get their meme jollies.  Simply click on your favorite oeuvre to get started!" <br/> <span className="right-arrow"> &#8594; </span>
         </p>
       </div>
-      {selectedPainting ? <IndividualPainting selectedId={selectedPainting}/> : 
+      { selectedPainting !== null ? <IndividualPainting selectedId={selectedPainting} /> : 
       <div className="images-container">
         {images && images?.map(image => {
 					const { url } = image.webImage
