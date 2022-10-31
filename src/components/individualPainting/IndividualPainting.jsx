@@ -1,24 +1,39 @@
-// import React from 'react'
-// import './IndividualPainting.css'
+import React, { useState, useEffect } from 'react'
+import { getSinglePainting } from '../../apiCalls';
+import './IndividualPainting.css'
 
-// const PaintingCard = () => {
-//   const { id , title, description, date } = artObject.label
-//   const { url } = artObject.webImage
-//   const { name } = artObject.principalMakers
 
-//   const year = String(date).split('-')[0]
+const IndividualPainting = ({selectedId}) => {
+  const [paintingObject, setPaintingObject] = useState({});
+  useEffect(() => {
+    const findPainting = () => {
+    getSinglePainting(selectedId)
+      .then(response => {
+        const obj = {
+          id: response.artObject.id,
+          title: response.artObject.title, 
+          description: response.artObject.label.description,
+          img: response.artObject.webImage.url,
+          artist: response.artObject.principalMakers[0].name,
+          year: response.artObject.dating.presentingDate
+        }
+        setPaintingObject(obj)
+        })
+    }
+    findPainting()
+  }, []);
+  const { id, title, description, img, artist, year } = paintingObject;
 
-//   return (
-//     <section className='individual-painting' id={id}>
-//       <img className='individual-painting-img' alt={title} src={url}/>
-//       <div className='painting-details'>
-//         <h1 className='individual-painting-title'>{title}</h1>
-//         <h2 className='individual-painting-author'>{name}</h2>
-//         <p className='individual-painting-description'>{description}</p>
-//         <p className='individual-painting-date'>{year}</p>
-//       </div>
-//     </section> 
-//   )
-// }
+  return (
+    <section className='individual-painting'>
+      <h1 className='individual-painting-title'>Title: {title}</h1>
+      <img className='individual-painting-img' src={img} alt={title}/>
+      <h2 className='individual-painting-author'>Artist: {artist}</h2>
+      <p className='individual-painting-description'>{description}</p>
+      <p className='individual-painting-date'>Year: {year}</p>
+    </section> 
+  )
 
-// export default PaintingCard
+}
+
+export default IndividualPainting;

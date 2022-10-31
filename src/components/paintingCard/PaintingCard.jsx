@@ -1,14 +1,12 @@
 import React from 'react'
 import './PaintingCard.css'
 
-const PaintingCard = ({url, name, id}) => {  
+const PaintingCard = ({url, name, id, cb}) => {
     return (
-      <section className='cards-container'>
-        <img className='images' src={url} />
+      <a className='cards-container' onClick={cb}>
+        <img className='images' id={id} src={url} />
         <p className='card-titles'>{name}</p>
-        {/* <p>{ FORMTEXT }</p> */}
-        {/* <button onClick={}>Delete</button> */}
-      </section>
+      </a>
     );
 }
 
