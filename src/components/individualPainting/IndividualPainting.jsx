@@ -3,7 +3,7 @@ import { getSinglePainting } from '../../apiCalls';
 import './IndividualPainting.css'
 
 
-const IndividualPainting = ({selectedId}) => {
+const IndividualPainting = ({selectedId, memeTitle}) => {
   const [paintingObject, setPaintingObject] = useState({});
   useEffect(() => {
     const findPainting = () => {
@@ -28,6 +28,7 @@ const IndividualPainting = ({selectedId}) => {
     <section className='individual-painting'>
       <h1 className='individual-painting-title'>Title: {title}</h1>
       <img className='individual-painting-img' src={img} alt={title}/>
+      <p className="memeTitle">{memeTitle}</p>
       <h2 className='individual-painting-author'>Artist: {artist}</h2>
       <p className='individual-painting-description'>{description}</p>
       <p className='individual-painting-date'>Year: {year}</p>
