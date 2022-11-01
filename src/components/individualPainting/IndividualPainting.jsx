@@ -26,11 +26,12 @@ const IndividualPainting = ({selectedId}) => {
 
   return (
     <section className='individual-painting'>
-      <h1 className='individual-painting-title'>Title: {title}</h1>
       <img className='individual-painting-img' src={img} alt={title}/>
-      <h2 className='individual-painting-author'>Artist: {artist}</h2>
-      <p className='individual-painting-description'>{description}</p>
-      <p className='individual-painting-date'>Year: {year}</p>
+      <div className='.painting-details'>
+        <h1 className='individual-painting-title'>{title}</h1>
+        <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
+        <p className='individual-painting-description'>{description}</p>
+      </div>
     </section> 
   )
 
