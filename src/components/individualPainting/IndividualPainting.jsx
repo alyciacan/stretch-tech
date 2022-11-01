@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { getSinglePainting } from '../../apiCalls';
 import './IndividualPainting.css'
+import { useContext } from 'react';
+import { MemeContext } from '../../contexts/MemeContext'
 
 
 const IndividualPainting = ({selectedId, memeTitle}) => {
@@ -23,6 +25,16 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
     findPainting()
   }, []);
   const { id, title, description, img, artist, year } = paintingObject;
+  const { memes, setMemes } = useContext(MemeContext);
+
+  const sendMeme = (e) => {
+    const newMeme = {img, memeTitle}
+    setMemes(prevState => {
+      console.log(prevState)
+      return {...prevState, newMeme}
+  })
+  }
+  console.log(memes)
 
   return (
     <section className='individual-painting'>
@@ -32,6 +44,7 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
         <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
         <p className='individual-painting-description'>{description}</p>
         <p className="memeTitle">{memeTitle}</p>
+        <button className=" meme-save-button" onClick={(e) => sendMeme(e) }>Save Meme</button>
       </div>
     </section> 
   )

@@ -1,6 +1,8 @@
 import { createContext, useState } from 'react';
 
-const MemeContext = createContext();
+export const MemeContext = createContext({
+ allMemes: []
+});
 
 export const MemeProvider = ({ children }) => {
     const [memes, setMemes] = useState([]);
@@ -13,4 +15,3 @@ export const MemeProvider = ({ children }) => {
     )
 }
 
-export default MemeContext;

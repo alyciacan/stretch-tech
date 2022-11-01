@@ -1,7 +1,10 @@
 import './MyGallery.css';
 import ArtCard from '../artCard/ArtCard';
+import { useContext } from 'react';
+import { MemeContext } from '../../contexts/MemeContext';
 
 const MyGallery = (arrayOfFavs) => {
+    const memes = [];
     const myFavs = arrayOfFavs.map(fav => {
         return <ArtCard 
                     img={ fav.imgURL }
