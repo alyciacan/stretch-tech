@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Form.css"
 
-const Form = () => {
+const Form = ({getMemeTitle}) => {
   const [sentence, setSentence] = useState("");
 
   const handleChange = (event) => {
     setSentence(event.currentTarget.value);
-
+    getMemeTitle(sentence)
   };
 
   const handleMax = () => {
@@ -21,7 +21,7 @@ const Form = () => {
         })
     }
   }
-
+ 
   return (
     <div>
     <form className="form-container">

@@ -13,6 +13,7 @@ import {getAllArt} from "../../apiCalls"
 
 function App() {
   const [images, setImages] = useState([]);
+  const [memeTitle, setMemeTitle] = useState("")
 
   useEffect(() => {
     const getImages = () => {
@@ -23,6 +24,10 @@ function App() {
     getImages();
   }, []);
 
+  const getMemeTitle = (memeTitle) => {
+
+    setMemeTitle(memeTitle)
+  }
   return (
     <div className="App">
       <Navbar />
@@ -41,7 +46,7 @@ function App() {
             const id = match.params.id
             return (
               <div>
-                <IndividualPainting selectedId={id}/> <Form />
+                <IndividualPainting memeTitle={memeTitle} selectedId={id}/> <Form getMemeTitle={getMemeTitle}/>
               </div>
             );
           }}
