@@ -1,8 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { getAllArt } from "../../apiCalls";
-import { getSinglePainting } from "../../apiCalls.js"
 import PaintingCard from '../paintingCard/PaintingCard'
-import IndividualPainting from '../individualPainting/IndividualPainting'
 import "./Home.css";
 
 const Home = ({images, handleClick}) => {
