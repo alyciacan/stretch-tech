@@ -8,11 +8,10 @@ import Form from "../form/Form";
 import IndividualPainting from "../individualPainting/IndividualPainting";
 import Navbar from "../navbar/Navbar";
 import PageNotFound from "../../pageNotFound/PageNotFound";
-import {getAllArt, getSinglePainting} from "../../apiCalls"
+import {getAllArt} from "../../apiCalls"
 
 
 function App() {
- // const [selectedPainting, setPainting] = useState(null)
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -23,7 +22,6 @@ function App() {
     };
     getImages();
   }, []);
-
 
   return (
     <div className="App">
@@ -41,7 +39,6 @@ function App() {
           path="/IndividualPainting/:id"
           render={({ match }) => {
             const id = match.params.id
-            console.log(id);
             return (
               <div>
                 <IndividualPainting selectedId={id}/> <Form />
