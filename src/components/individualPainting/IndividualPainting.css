@@ -28,7 +28,7 @@
 }
 
 .painting-details {
-  display:flex;
+  display: flex;
   flex-direction: column;
   padding: 5px;
   margin: 10px;
@@ -66,3 +66,21 @@
   padding-left: 2em;
   padding-right: 2em;
 }
+
+.individual-painting-date {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.memeTitle {
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  right: 50vw;
+  font-size: 5vw;
+  color: white;
+}
+

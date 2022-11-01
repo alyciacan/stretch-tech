@@ -1,12 +1,13 @@
 import React from 'react'
 import './PaintingCard.css'
+import {Link} from 'react-router-dom'
 
-const PaintingCard = ({url, name, id, cb}) => {
+const PaintingCard = ({url, name, id}) => {
     return (
-      <a className='cards-container' onClick={cb}>
+      <Link to={`/IndividualPainting/${id}`} className='cards-container'>
         <img className='images' id={id} src={url} />
         <p className='card-titles'>{name}</p>
-      </a>
+      </Link>
     );
 }
 
