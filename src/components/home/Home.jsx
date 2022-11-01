@@ -2,8 +2,6 @@ import PaintingCard from '../paintingCard/PaintingCard'
 import "./Home.css";
 
 const Home = ({images, handleClick}) => {
-
-
   return (
     <section className="description-container">
       <div className="description">
@@ -12,7 +10,6 @@ const Home = ({images, handleClick}) => {
         Art Party is how the most sophisticated, discerning art history buffs get their meme jollies.  Simply click on your favorite oeuvre to get started!" <br/> <span className="right-arrow"> &#8594; </span>
         </p>
       </div>
-    
       <div className="images-container">
         {images && images?.map(image => {
 					const { url } = image.webImage
@@ -26,10 +23,8 @@ const Home = ({images, handleClick}) => {
 								cb={handleClick}
 							/>  
 						)
-					
 				})}
       </div>
-
     </section>
   );
 };

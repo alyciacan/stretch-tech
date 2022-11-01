@@ -46,7 +46,6 @@ function App() {
             );
           }}
         />
-
         <PageNotFound />
       </Switch>
     </div>
