@@ -10,7 +10,7 @@ export default function PageNotFound() {
         This one
       </p>
       <Link to="/">
-        <button>Home</button>{" "}
+        <button>Home</button>
       </Link>
     </div>
   );

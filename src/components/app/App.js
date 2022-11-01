@@ -7,7 +7,7 @@ import Home from "../home/Home";
 import Form from "../form/Form";
 import IndividualPainting from "../individualPainting/IndividualPainting";
 import Navbar from "../navbar/Navbar";
-import PageNotFound from "../../pageNotFound/PageNotFound";
+import PageNotFound from "../pageNotFound/PageNotFound";
 import {getAllArt} from "../../apiCalls"
 
 
