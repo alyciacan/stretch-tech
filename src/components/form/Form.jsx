@@ -6,7 +6,7 @@ const Form = ({getMemeTitle}) => {
 
   const handleChange = (event) => {
     setSentence(event.currentTarget.value);
-    getMemeTitle(sentence)
+    getMemeTitle(event.currentTarget.value)
   };
 
   const handleMax = () => {
