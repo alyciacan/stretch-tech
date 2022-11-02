@@ -43,7 +43,6 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
       </div>
     </section> 
   )
-
 }
 
 export default IndividualPainting;
