@@ -17,9 +17,9 @@ function App() {
 
   useEffect(() => {
     const getImages = () => {
-      getAllArt().then(response => {
-        setImages(response.artObjects)
-      })      
+      getAllArt()
+      .then(response => {setImages(response.artObjects)})
+      .catch(err => console.log(err))    
     };
     getImages();
   }, []);

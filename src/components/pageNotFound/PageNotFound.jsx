@@ -6,8 +6,8 @@ export default function PageNotFound() {
     <div>
       <h1>Page not found</h1>
       <p>
-        We looked all over, but the page seems to have gotten away from us, Try
-        This one
+        We looked all over, but the page seems to have gotten away from us! Try
+        this one:
       </p>
       <Link to="/">
         <button>Home</button>

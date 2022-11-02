@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react'
 import { getSinglePainting } from '../../apiCalls';
 import './IndividualPainting.css'
 import { MemeContext } from '../../contexts/MemeContext'
-import PageNotFound from '../pageNotFound/PageNotFound';
 
 const IndividualPainting = ({selectedId, memeTitle}) => {
   const [paintingObject, setPaintingObject] = useState({});
@@ -25,17 +24,11 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
   }, []);
   const { id, title, description, img, artist, year } = paintingObject;
   const { memes, setMemes } = useContext(MemeContext);
-  let errorOrLoading = () => {
-    console.log(paintingObject)
-    if(!Object.keys(paintingObject).length) {
-      return "Loading..."
-    }
-  }
 
   if(!id) {
     return (
-    <h3>{ errorOrLoading() }</h3>)
-  } else {
+    <h3>Loading...</h3>
+  )} else {
     return (
       <section className='individual-painting'>
         <img className='individual-painting-img' src={img} alt={title}/>
