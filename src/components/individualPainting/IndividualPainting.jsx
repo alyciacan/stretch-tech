@@ -25,16 +25,17 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
     findPainting()
   }, []);
   const { id, title, description, img, artist, year } = paintingObject;
-  const { memes, setMemes } = useContext(MemeContext);
+  const { memes, setMemes, addMemeToGallery } = useContext(MemeContext);
+  console.log(MemeContext)
 
   const sendMeme = (e) => {
+    e.preventDefault()
     const newMeme = {img, memeTitle}
-    setMemes(prevState => {
-      console.log(prevState)
-      return {...prevState, newMeme}
-  })
+    addMemeToGallery(newMeme)
+    //console.log('with additions', memes)
+    console.log(MemeContext)
   }
-  console.log(memes)
+  //console.log(memes)
 
   return (
     <section className='individual-painting'>
