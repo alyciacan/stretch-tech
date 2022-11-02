@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export default function PageNotFound() {
   return (
     <div>
-      <h1>Page not found</h1>
-      <p>
+      <h2 className='error-text'>Page not found</h2>
+      <p className='error-text'>
         We looked all over, but the page seems to have gotten away from us, Try
         This one
       </p>
