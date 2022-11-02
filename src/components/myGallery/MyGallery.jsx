@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { MemeContext } from '../../contexts/MemeContext';
 
 const MyGallery = (arrayOfFavs) => {
-    const memes = [];
+    const {memes} = useContext(memeContext)
     const myFavs = arrayOfFavs.map(fav => {
         return <ArtCard 
                     img={ fav.imgURL }

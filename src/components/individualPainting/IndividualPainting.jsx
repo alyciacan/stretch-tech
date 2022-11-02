@@ -24,18 +24,9 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
     }
     findPainting()
   }, []);
-  const { id, title, description, img, artist, year } = paintingObject;
-  const { memes, setMemes, addMemeToGallery } = useContext(MemeContext);
-  console.log(MemeContext)
 
-  const sendMeme = (e) => {
-    e.preventDefault()
-    const newMeme = {img, memeTitle}
-    addMemeToGallery(newMeme)
-    //console.log('with additions', memes)
-    console.log(MemeContext)
-  }
-  //console.log(memes)
+  const { id, title, description, img, artist, year } = paintingObject;
+  const { memes, setMemes } = useContext(MemeContext);
 
   return (
     <section className='individual-painting'>
@@ -45,7 +36,7 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
         <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
         <p className='individual-painting-description'>{description}</p>
         <p className="memeTitle">{memeTitle}</p>
-        <button className=" meme-save-button" onClick={(e) => sendMeme(e) }>Save Meme</button>
+        <button className=" meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
       </div>
     </section> 
   )
