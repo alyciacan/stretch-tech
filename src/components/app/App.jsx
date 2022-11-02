@@ -7,6 +7,7 @@ import Home from "../home/Home";
 import Form from "../form/Form";
 import IndividualPainting from "../individualPainting/IndividualPainting";
 import Navbar from "../navbar/Navbar";
+import MyGallery from "../myGallery/MyGallery";
 import PageNotFound from "../pageNotFound/PageNotFound";
 import {getAllArt} from "../../apiCalls"
 
@@ -25,7 +26,6 @@ function App() {
   }, []);
 
   const getMemeTitle = (memeTitle) => {
-
     setMemeTitle(memeTitle)
   }
   return (
@@ -46,11 +46,16 @@ function App() {
             const id = match.params.id
             return (
               <div>
-                <IndividualPainting memeTitle={memeTitle} selectedId={id}/> <Form getMemeTitle={getMemeTitle}/>
+                <IndividualPainting memeTitle={memeTitle} setMemeTitle={setMemeTitle} selectedId={id}/> <Form getMemeTitle={getMemeTitle}/>
               </div>
             );
           }}
         />
+        <Route 
+          path="/mygallery"
+          render={() => {
+            return <MyGallery />
+          }} />
         <PageNotFound />
       </Switch>
     </div>

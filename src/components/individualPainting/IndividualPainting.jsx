@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { MemeContext } from '../../contexts/MemeContext'
 
 
-const IndividualPainting = ({selectedId, memeTitle}) => {
+const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
   const [paintingObject, setPaintingObject] = useState({});
   useEffect(() => {
     const findPainting = () => {
@@ -28,6 +28,11 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
   const { id, title, description, img, artist, year } = paintingObject;
   const { memes, setMemes } = useContext(MemeContext);
 
+  const saveMeme = () => {
+    setMemes([{memeTitle, img, id}, ...memes]);
+    setMemeTitle("")
+  }
+  console.log(memes)
   return (
     <section className='individual-painting'>
       <div className='meme-container'>
@@ -39,7 +44,7 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
         <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
         <p className='individual-painting-description'>{description}</p>
         <p className="memeTitle">{memeTitle}</p>
-        <button className=" meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
+        <button className=" meme-save-button" type="button" onClick={ saveMeme }>Save Meme</button>
       </div>
     </section> 
   )
