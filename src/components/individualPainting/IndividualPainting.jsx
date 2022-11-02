@@ -30,8 +30,11 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
 
   return (
     <section className='individual-painting'>
-      <img className='individual-painting-img' src={img} alt={title}/>
-      <div className='.painting-details'>
+      <div className='meme-container'>
+        <img className='individual-painting-img' src={img} alt={title}/>
+        <p className="memeTitle">{memeTitle}</p>
+      </div>
+      <div className='.painting-details-container'>
         <h1 className='individual-painting-title'>{title}</h1>
         <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
         <p className='individual-painting-description'>{description}</p>
@@ -40,7 +43,6 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
       </div>
     </section> 
   )
-
 }
 
 export default IndividualPainting;
