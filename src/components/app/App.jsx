@@ -9,7 +9,6 @@ import IndividualPainting from "../individualPainting/IndividualPainting";
 import Navbar from "../navbar/Navbar";
 import PageNotFound from "../pageNotFound/PageNotFound";
 import { getAllArt } from "../../apiCalls"
-import { PaintingsContext } from '../../contexts/PaintingsContext';
 
 
 function App() {
