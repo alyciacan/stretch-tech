@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { getSinglePainting } from '../../apiCalls';
 import './IndividualPainting.css'
-import { useContext } from 'react';
 import { MemeContext } from '../../contexts/MemeContext'
+import { PaintingsContext } from '../../contexts/PaintingsContext';
 
 
 const IndividualPainting = ({selectedId, memeTitle}) => {
+  //check id against existing ids in gallery array(move array onto GSM)
+  const { paintings } = useContext(PaintingsContext);
+  
   const [paintingObject, setPaintingObject] = useState({});
   useEffect(() => {
     const findPainting = () => {
@@ -40,7 +43,6 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
       </div>
     </section> 
   )
-
 }
 
 export default IndividualPainting;

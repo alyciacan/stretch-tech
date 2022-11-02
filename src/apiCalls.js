@@ -1,26 +1,21 @@
-const getAllArt = () => {
-  try {
-		return fetch("https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn")
-		.then(response => response.json())
-		.then(data => data)
-		
-	} catch (error) {
-		console.log(error);
+const checkResponse = (response) => {
+	if (!response.ok) {
+		console.log("not ok!")
+		throw Error(response.statusText);
 	}
+	return response;
+}
+
+const getAllArt = () => {
+	return fetch("https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn")
+		.then(response => checkResponse(response))
+		.then(response => response.json());
 };
 
 const getSinglePainting = (id) => {
-	try {
-		return fetch(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=AgQXh8Og`)
-		.then(response => response.json())
-		.then(data => { 
-      return data
-    })
-	} catch (error) {
-		console.log(error);
-	}
+	return fetch(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=AgQXh8Og`)
+	.then(response => checkResponse(response))
+	.then(response => response.json());
 };
-
-
 
 export { getAllArt, getSinglePainting };
