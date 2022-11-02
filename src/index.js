@@ -4,14 +4,16 @@ import "./index.css";
 import App from "../src/components/app/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
+import { MemeProvider } from '../src/contexts/MemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   
     <Router>
-      <App />
+      <MemeProvider>
+        <App />
+      </MemeProvider>
     </Router>
-
 );
 
 // If you want to start measuring performance in your app, pass a function

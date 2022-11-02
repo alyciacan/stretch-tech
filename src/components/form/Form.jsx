@@ -6,7 +6,7 @@ const Form = ({getMemeTitle}) => {
 
   const handleChange = (event) => {
     setSentence(event.currentTarget.value);
-    getMemeTitle(sentence)
+    getMemeTitle(event.currentTarget.value)
   };
 
   const handleMax = () => {
@@ -31,7 +31,6 @@ const Form = ({getMemeTitle}) => {
         placeholder="Enter text here"
         onChange={(event) => handleChange(event)}
       />
-      <button className=" meme-save-button">Save Meme</button>
      </form>
      {sentence.length > 0 && <span style={handleColor()}> Remaining Characters: {handleMax()} </span> }
     </div>
