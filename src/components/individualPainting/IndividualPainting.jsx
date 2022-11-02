@@ -25,6 +25,7 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
   const { id, title, description, img, artist, year } = paintingObject;
   const { memes, setMemes } = useContext(MemeContext);
 
+
   if(!id) {
     return (
     <h3>Loading...</h3>
@@ -42,6 +43,22 @@ const IndividualPainting = ({selectedId, memeTitle}) => {
       </section> 
     )
   }
+
+  return (
+    <section className='individual-painting'>
+      <div className='meme-container'>
+        <img className='individual-painting-img' src={img} alt={title}/>
+        <p className="memeTitle">{memeTitle}</p>
+      </div>
+      <div className='.painting-details-container'>
+        <h1 className='individual-painting-title'>{title}</h1>
+        <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
+        <p className='individual-painting-description'>{description}</p>
+        <p className="memeTitle">{memeTitle}</p>
+        <button className=" meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
+      </div>
+    </section> 
+  )
 }
 
 export default IndividualPainting;
