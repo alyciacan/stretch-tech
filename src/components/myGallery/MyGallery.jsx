@@ -13,7 +13,6 @@ const MyGallery = () => {
             />
             )
     })
-    console.log(memes)
     return (
         <section className='my-gallery'>
             { myMemes }

@@ -6,7 +6,8 @@ const MemeCard = ({ img, memeTitle }) => {
    const background = {
     backgroundImage: `url(${ img })`,
     backgroundSize: '25vw',
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center bottom'
     
 };
     return (
