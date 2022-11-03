@@ -1,7 +1,6 @@
 describe('As a user, when I load the application, I can see a collection of paintings', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn', { fixture: 'allPaintings'}).as('artObjects')
-    // cy.intercept('GET', 'https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn', { fixture: 'allPaintings'}).as('artObjects')
     cy.visit('http://localhost:3000/')
     cy.wait('@artObjects').then(() => {
       'response.ok'
@@ -30,6 +29,12 @@ describe('As a user, when I load the application, I can see a collection of pain
       .get('.navbar-link').should('be.visible')
   })
 
+  it.skip('should be able to click on the myGallery button and be taken to myGallery', () => {
+    cy
+      .get('.navbar-link')
+      .click()
+  })
+
   it('should display the aside with an h1 that read "Art Gallery" and a p tag with directions for the site', () => {
     cy
       .get('h1').contains('Art Gallery')
@@ -50,11 +55,13 @@ describe('As a user, when I load the application, I can see a collection of pain
       .get('.individual-painting').should('not.exist')
   })
 
-  it.skip('Should be able to use the browser arrow buttons to go between the home page and individual painting page', () => {
-    cy
-      .get('.images').first().click()
-      // .intercept('GET', 'https://www.rijksmuseum.nl/api/en/collection/*', { fixture: 'Painting1'}).as('artObject')
-      .visit('http://localhost:3000/IndividualPainting/SK-A-4050')
+  it('Should be able to use the browser arrow buttons to go between the home page and individual painting page', () => {
+    cy.intercept(
+      'GET', 
+      'https://www.rijksmuseum.nl/api/en/collection/**', 
+      { fixture: 'painting2.json'}
+      )
+      cy.visit("http://localhost:3000/IndividualPainting/SK-A-4050")
       .url().should('eq', 'http://localhost:3000/IndividualPainting/SK-A-4050')
       .go('back')
       .url().should('eq', 'http://localhost:3000/')
