@@ -1,26 +1,21 @@
 import './MyGallery.css';
-import ArtCard from '../artCard/ArtCard';
-import { useContext } from 'react';
+import MemeCard from '../memeCard/MemeCard';
 import { MemeContext } from '../../contexts/MemeContext';
+import { useContext } from 'react';
 
-const MyGallery = (arrayOfFavs) => {
-    const {memes} = useContext(memeContext)
-    const myFavs = arrayOfFavs.map(fav => {
-        return <ArtCard 
-                    img={ fav.imgURL }
-                    memeText={ fav.memeText }
-                    key={ fav.id }
-                />
+const MyGallery = () => {
+    const { memes } = useContext(MemeContext)
+    const myMemes = memes.map(meme => {
+        return (<MemeCard 
+            img={meme.img}
+            memeTitle={meme.memeTitle}
+            key={Date.now + meme.memeTitle}
+            />
+            )
     })
     return (
         <section className='my-gallery'>
-            { myFavs }
-        </section>
-    )
-};
-    return (
-        <section className='my-gallery'>
-            { allArt }
+            { myMemes }
         </section>
     )
 };

@@ -1,0 +1,16 @@
+.meme-title {
+    display: flex;
+    text-align: center;
+    font-size: 150%;
+    color: white;
+    max-width: 20vw;
+}
+
+  .meme-card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    max-width: 25vw;
+    min-height: 65vh;
+    overflow: none;
+  }
