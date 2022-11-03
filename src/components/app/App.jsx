@@ -2,13 +2,14 @@ import "./App.css";
 
 import { Router, Switch, NavLink, Route } from "react-router-dom";
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Home from "../home/Home";
 import Form from "../form/Form";
 import IndividualPainting from "../individualPainting/IndividualPainting";
 import Navbar from "../navbar/Navbar";
+import MyGallery from "../myGallery/MyGallery";
 import PageNotFound from "../pageNotFound/PageNotFound";
-import {getAllArt} from "../../apiCalls"
+import { getAllArt } from "../../apiCalls"
 
 
 function App() {
@@ -17,15 +18,14 @@ function App() {
 
   useEffect(() => {
     const getImages = () => {
-      getAllArt().then(response => {
-        setImages(response.artObjects)
-      })      
+      getAllArt()
+      .then(response => {setImages(response.artObjects)})
+      .catch(err => console.log(err))    
     };
     getImages();
   }, []);
 
   const getMemeTitle = (memeTitle) => {
-
     setMemeTitle(memeTitle)
   }
   return (
@@ -46,12 +46,17 @@ function App() {
             const id = match.params.id
             return (
               <div>
-                <IndividualPainting memeTitle={memeTitle} selectedId={id}/> <Form getMemeTitle={getMemeTitle}/>
+                <IndividualPainting memeTitle={memeTitle} setMemeTitle={setMemeTitle} selectedId={id}/> <Form getMemeTitle={getMemeTitle}/>
               </div>
             );
           }}
         />
-        <PageNotFound />
+        <Route 
+          path="/mygallery"
+          render={() => {
+            return <MyGallery />
+          }} />
+        <Route component={PageNotFound} />
       </Switch>
     </div>
   );
