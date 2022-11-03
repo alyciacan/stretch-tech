@@ -1,0 +1,24 @@
+.meme-title {
+    display: flex;
+    text-align: center;
+    font-size: 2.5vw;
+    color: white;
+    max-width: 20vw;
+  }
+
+  .meme-painting-img {
+    display: flex;
+    justify-content: center;
+    height:400px;
+    width: 400px;
+    border-radius: 10px 0px 0px 10px;
+    color: black;
+  }
+
+  .meme-card {
+    display: flex;
+    justify-content: center;
+    max-width: 25vw;
+    min-height: 25vh;
+    overflow: none;
+  }
