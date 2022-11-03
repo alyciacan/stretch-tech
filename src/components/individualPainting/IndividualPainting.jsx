@@ -32,7 +32,6 @@ const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
     setMemes([{memeTitle, img, id}, ...memes]);
     setMemeTitle("")
   }
-  console.log(memes)
   return (
     <section className='individual-painting'>
       <div className='meme-container'>

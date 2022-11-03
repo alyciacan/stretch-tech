@@ -2,7 +2,6 @@ import './MemeCard.css';
 
 
 const MemeCard = ({ img, memeTitle }) => {
-   console.log(memeTitle)
    const background = {
     backgroundImage: `url(${ img })`,
     backgroundSize: '25vw',
