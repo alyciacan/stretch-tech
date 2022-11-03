@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { getSinglePainting } from '../../apiCalls';
 import './IndividualPainting.css'
-import { useContext } from 'react';
 import { MemeContext } from '../../contexts/MemeContext'
+
 
 
 const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
@@ -24,7 +24,6 @@ const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
     }
     findPainting()
   }, []);
-
   const { id, title, description, img, artist, year } = paintingObject;
   const { memes, setMemes } = useContext(MemeContext);
 
@@ -32,21 +31,24 @@ const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
     setMemes([{memeTitle, img, id}, ...memes]);
     setMemeTitle("")
   }
-  return (
-    <section className='individual-painting'>
-      <div className='meme-container'>
+
+  if(!id) {
+    return (
+    <h3>Loading...</h3>
+  )} else {
+    return (
+      <section className='individual-painting'>
         <img className='individual-painting-img' src={img} alt={title}/>
-        <p className="memeTitle">{memeTitle}</p>
-      </div>
-      <div className='.painting-details-container'>
-        <h1 className='individual-painting-title'>{title}</h1>
-        <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
-        <p className='individual-painting-description'>{description}</p>
-        <p className="memeTitle">{memeTitle}</p>
-        <button className=" meme-save-button" type="button" onClick={ saveMeme }>Save Meme</button>
-      </div>
-    </section> 
-  )
+        <div className='.painting-details'>
+          <h1 className='individual-painting-title'>{title}</h1>
+          <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
+          <p className='individual-painting-description'>{description}</p>
+          <p className="memeTitle">{memeTitle}</p>
+          <button className=" meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
+        </div>
+      </section> 
+    )
+  }
 }
 
 export default IndividualPainting;

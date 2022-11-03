@@ -2,14 +2,14 @@ import "./App.css";
 
 import { Router, Switch, NavLink, Route } from "react-router-dom";
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Home from "../home/Home";
 import Form from "../form/Form";
 import IndividualPainting from "../individualPainting/IndividualPainting";
 import Navbar from "../navbar/Navbar";
 import MyGallery from "../myGallery/MyGallery";
 import PageNotFound from "../pageNotFound/PageNotFound";
-import {getAllArt} from "../../apiCalls"
+import { getAllArt } from "../../apiCalls"
 
 
 function App() {
@@ -18,9 +18,9 @@ function App() {
 
   useEffect(() => {
     const getImages = () => {
-      getAllArt().then(response => {
-        setImages(response.artObjects)
-      })      
+      getAllArt()
+      .then(response => {setImages(response.artObjects)})
+      .catch(err => console.log(err))    
     };
     getImages();
   }, []);
@@ -56,7 +56,7 @@ function App() {
           render={() => {
             return <MyGallery />
           }} />
-        <PageNotFound />
+        <Route component={PageNotFound} />
       </Switch>
     </div>
   );
