@@ -2,11 +2,14 @@ import React, { useState, useEffect, useContext } from 'react'
 import { getSinglePainting } from '../../apiCalls';
 import './IndividualPainting.css'
 import { MemeContext } from '../../contexts/MemeContext'
+import Form from '../form/Form';
 
 
 
-const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
+const IndividualPainting = ({ selectedId }) => {
   const [paintingObject, setPaintingObject] = useState({});
+  const [memeTitle, setMemeTitle] = useState("")
+
   useEffect(() => {
     const findPainting = () => {
     getSinglePainting(selectedId)
@@ -24,13 +27,18 @@ const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
     }
     findPainting()
   }, []);
+
   const { id, title, description, img, artist, year } = paintingObject;
   const { memes, setMemes } = useContext(MemeContext);
+
+  const getMemeTitle = (memeTitle) => {
+    setMemeTitle(memeTitle)
+  };
 
   const saveMeme = () => {
     setMemes([{memeTitle, img, id}, ...memes]);
     setMemeTitle("")
-  }
+  };
 
   if(!id) {
     return (
@@ -43,8 +51,11 @@ const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
           <h1 className='individual-painting-title'>{title}</h1>
           <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
           <p className='individual-painting-description'>{description}</p>
-          <p className="memeTitle">{memeTitle}</p>
-          <button className=" meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
+          <p className='meme-title'>{memeTitle}</p>
+          <section className='meme-form'>
+            <Form getMemeTitle={getMemeTitle}/>
+            <button className='meme-save-button' type='button' onClick={() => saveMeme()}>Save Meme</button>
+          </section>
         </div>
       </section> 
     )
