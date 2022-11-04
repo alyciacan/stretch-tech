@@ -12,7 +12,7 @@ const Form = ({getMemeTitle}) => {
   const handleMax = () => {
     const maxLength = 50 - sentence.length
     return maxLength
-  }
+  };
 
   const handleColor = () => {
     if(handleMax() < 20){
@@ -20,7 +20,7 @@ const Form = ({getMemeTitle}) => {
             color: "red"
         })
     }
-  }
+  };
  
   return (
     <form>

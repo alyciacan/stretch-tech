@@ -51,10 +51,10 @@ const IndividualPainting = ({ selectedId }) => {
           <h1 className='individual-painting-title'>{title}</h1>
           <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
           <p className='individual-painting-description'>{description}</p>
-          <p className="memeTitle">{memeTitle}</p>
-          <section className="meme-form">
+          <p className='meme-title'>{memeTitle}</p>
+          <section className='meme-form'>
             <Form getMemeTitle={getMemeTitle}/>
-            <button className="meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
+            <button className='meme-save-button' type='button' onClick={() => saveMeme()}>Save Meme</button>
           </section>
         </div>
       </section> 
