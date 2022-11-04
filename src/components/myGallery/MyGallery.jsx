@@ -12,7 +12,6 @@ const MyGallery = () => {
         const copyOfMemes = [...memes]
         const filtered = copyOfMemes.filter(meme => meme.memeId !== clickedMemeId)
         setMemes(filtered)
-        console.log(clickedMemeId);
     }
 
     const myMemes = memes.map(meme => {
