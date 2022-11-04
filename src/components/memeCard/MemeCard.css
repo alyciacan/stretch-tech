@@ -14,3 +14,12 @@
     min-height: 65vh;
     overflow: none;
   }
+
+  .meme-delete-button{
+    align-self:auto;
+
+  }
+
+  .meme-delete-button:hover{
+    cursor: pointer;
+  }
