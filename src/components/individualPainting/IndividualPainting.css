@@ -80,3 +80,16 @@
   color: white;
 }
 
+.meme-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 2px;
+}
+
+.meme-save-button {
+    max-width: 5rem;
+    min-height: fit-content;
+    padding: 1.5px;
+}
+
