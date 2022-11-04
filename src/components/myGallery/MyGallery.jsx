@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 const MyGallery = () => {
     const { memes, setMemes } = useContext(MemeContext)
 
-
-
     const getDeletedMeme = (clickedMemeId) => {
         const copyOfMemes = [...memes]
         const filtered = copyOfMemes.filter(meme => meme.memeId !== clickedMemeId)
