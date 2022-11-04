@@ -10,7 +10,7 @@ const Form = ({getMemeTitle}) => {
   };
 
   const handleMax = () => {
-    const maxLength = 50 - sentence.length
+    const maxLength = 30 - sentence.length
     return maxLength
   }
 
