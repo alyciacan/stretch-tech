@@ -6,6 +6,7 @@
     background-image: linear-gradient(white, #aaa); 
     max-width: 100vw; 
     padding: 8px;
+    height: 100vh;
 }
 
 @media screen and (max-width: 800px) {
