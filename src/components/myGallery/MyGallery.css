@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 15px; 
     grid-row-gap: 15px;  
-    background-image: linear-gradient(#eee, #aaa); 
+    background-image: linear-gradient(white, #aaa); 
     max-width: 100vw; 
     padding: 8px;
 }
