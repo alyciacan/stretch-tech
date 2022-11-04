@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    max-width: 25vw;
     min-height: 65vh;
     overflow: none;
   }
@@ -23,3 +22,12 @@
   .meme-delete-button:hover{
     cursor: pointer;
   }
+
+    box-shadow: 0px 15px 5px -5px rgba(0,0,0,0.2);
+    transition: transform 250ms;
+  }
+
+  .meme-card:hover {
+    transform: translateY(-10px);
+  }
+

@@ -14,7 +14,6 @@ import { getAllArt } from "../../apiCalls"
 
 function App() {
   const [images, setImages] = useState([]);
-  const [memeTitle, setMemeTitle] = useState("")
 
   useEffect(() => {
     const getImages = () => {
@@ -25,9 +24,6 @@ function App() {
     getImages();
   }, []);
 
-  const getMemeTitle = (memeTitle) => {
-    setMemeTitle(memeTitle)
-  }
   return (
     <div className="App">
       <Navbar />
@@ -53,8 +49,15 @@ function App() {
             }else{
               return(<Route component={PageNotFound} />)
             }
-            
            
+            return (
+              <div>
+                <IndividualPainting 
+                // memeTitle={memeTitle} 
+                // setMemeTitle={setMemeTitle} 
+                selectedId={id}/> 
+              </div>
+            );
           }}
         />
         <Route 

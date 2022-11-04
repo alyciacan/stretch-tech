@@ -1,8 +1,3 @@
-/* * {
-  border: 1px solid;
-  color:crimson;
-} */
-
 .meme-container {
   display: flex;
 }
@@ -54,7 +49,8 @@
   padding-right: 2em;
 }
 
-.individual-painting-artist, .individual-painting-date {
+.individual-painting-artist, 
+.individual-painting-date {
   display: flex;
   color: black;
   justify-content: center;
@@ -76,12 +72,25 @@
   padding-right: 2em;
 }
 
-.memeTitle {
+.meme-title {
   display: flex;
   position: fixed;
   top: 28rem;
   left: 8rem;
   font-size: 2.5vw;
   color: white;
+}
+
+.meme-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 2px;
+}
+
+.meme-save-button {
+    max-width: 5rem;
+    min-height: fit-content;
+    padding: 1.5px;
 }
 
