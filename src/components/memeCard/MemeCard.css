@@ -12,6 +12,17 @@
     align-items: flex-end;
     min-height: 65vh;
     overflow: none;
+  }
+
+  .meme-delete-button{
+    align-self:auto;
+
+  }
+
+  .meme-delete-button:hover{
+    cursor: pointer;
+  }
+
     box-shadow: 0px 15px 5px -5px rgba(0,0,0,0.2);
     transition: transform 250ms;
   }
@@ -19,3 +30,4 @@
   .meme-card:hover {
     transform: translateY(-10px);
   }
+

@@ -40,6 +40,16 @@ function App() {
           path="/IndividualPainting/:id"
           render={({ match }) => {
             const id = match.params.id
+            if(images.find( image => image.objectNumber === id)){
+              return (
+                <div>
+                  <IndividualPainting memeTitle={memeTitle} setMemeTitle={setMemeTitle} selectedId={id}/> <Form getMemeTitle={getMemeTitle}/>
+                </div>
+              );
+            }else{
+              return(<Route component={PageNotFound} />)
+            }
+           
             return (
               <div>
                 <IndividualPainting 
