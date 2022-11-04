@@ -78,6 +78,9 @@
   top: 28rem;
   left: 8rem;
   font-size: 2.5vw;
+  color: white;
+  inline-size: 20rem;
+  word-break: break-all; 
   color: white;  
 }
 
