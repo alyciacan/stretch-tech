@@ -7,7 +7,7 @@ import Form from '../form/Form';
 const IndividualPainting = ({ selectedId }) => {
   const [paintingObject, setPaintingObject] = useState({});
   const [memeTitle, setMemeTitle] = useState("")
-
+  console.log(selectedId)
   useEffect(() => {
     const findPainting = () => {
     getSinglePainting(selectedId)

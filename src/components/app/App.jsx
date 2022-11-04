@@ -1,10 +1,9 @@
 import "./App.css";
 
-import { Router, Switch, NavLink, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect} from "react";
 import Home from "../home/Home";
-import Form from "../form/Form";
 import IndividualPainting from "../individualPainting/IndividualPainting";
 import Navbar from "../navbar/Navbar";
 import MyGallery from "../myGallery/MyGallery";
@@ -43,21 +42,12 @@ function App() {
             if(images.find( image => image.objectNumber === id)){
               return (
                 <div>
-                  <IndividualPainting memeTitle={memeTitle} setMemeTitle={setMemeTitle} selectedId={id}/> <Form getMemeTitle={getMemeTitle}/>
+                  <IndividualPainting selectedId={id} />
                 </div>
               );
             }else{
               return(<Route component={PageNotFound} />)
             }
-           
-            return (
-              <div>
-                <IndividualPainting 
-                // memeTitle={memeTitle} 
-                // setMemeTitle={setMemeTitle} 
-                selectedId={id}/> 
-              </div>
-            );
           }}
         />
         <Route 
