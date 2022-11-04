@@ -7,7 +7,7 @@ describe('As a user, when I load the application, I can see a collection of pain
     })
   })
 
-  it('should display an error message (500 status code) if paintings are unable to be displayed on the screen', () => {
+  it.skip('should display an error message (500 status code) if paintings are unable to be displayed on the screen', () => {
     cy.intercept(
       "GET",
       "https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
@@ -22,6 +22,15 @@ describe('As a user, when I load the application, I can see a collection of pain
     cy.get(".error-text").contains(` We looked all over, but the page seems to have gotten away from us, Try
     This one`);
   });
+
+  it('should display a page loading message while waiting for a paintings to display on page', () => {
+    cy
+    .get('.images-container').should('exist')
+    .get(':nth-child(1) > .images').should('be.visible')
+    .click()
+    .get('h3').should('exist').contains('Loading...')
+    })
+
 
   it('should display the navBar with application logo and buttons', () => {
     cy
@@ -46,6 +55,19 @@ describe('As a user, when I load the application, I can see a collection of pain
       .get('.images-container').should('exist')
       .get(':nth-child(1) > .images').should('be.visible')
       .get(':nth-child(2) > .images').should('be.visible')
+  })
+
+  it('should be able to click on a painting a view details about it', () => {
+    cy
+      .get('.images-container').should('exist')
+      .get(':nth-child(1) > .images').should('be.visible')
+      .click()
+      cy.intercept(
+        'GET', 
+        'https://www.rijksmuseum.nl/api/en/collection/**', 
+        { fixture: 'painting2.json'}
+        )
+        cy.visit("http://localhost:3000/IndividualPainting/SK-A-4050")
   })
   
   it('should not display details for an individual painting', () => {
