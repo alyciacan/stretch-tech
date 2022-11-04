@@ -43,7 +43,7 @@ function App() {
         <Route
           path="/IndividualPainting/:id"
           render={({ match }) => {
-            const id = match.params.i
+            const id = match.params.id
             if(images.find( image => image.objectNumber === id)){
               return (
                 <div>
