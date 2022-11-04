@@ -10,8 +10,8 @@ const Form = ({ getMemeTitle, saveMeme }) => {
   };
 
   const handleMax = () => {
-    const maxLength = 50 - sentence.length;
-    return maxLength;
+    const maxLength = 30 - sentence.length
+    return maxLength
   };
 
   const handleColor = () => {
