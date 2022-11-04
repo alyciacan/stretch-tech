@@ -1,7 +1,22 @@
-.meme-input,
-.meme-save-button {
+.meme-input{
     border-radius: 8px;
     height: 2rem;
     width: 20rem;
 }
+.meme-save-button {
+    border-radius: 8px;
+    height: 2.4rem;
+    width: 6rem;
+    margin-bottom: 1.1rem;
+    margin-left: 2px;
+    background-color: aquamarine;
+  }
 
+.form-container, .container{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+
+    flex-direction: row;
+}
