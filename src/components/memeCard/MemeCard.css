@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    max-width: 25vw;
     min-height: 65vh;
     overflow: none;
   }
