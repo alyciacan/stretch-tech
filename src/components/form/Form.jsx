@@ -12,7 +12,7 @@ const Form = ({getMemeTitle}) => {
   const handleMax = () => {
     const maxLength = 30 - sentence.length
     return maxLength
-  }
+  };
 
   const handleColor = () => {
     if(handleMax() < 20){
@@ -20,20 +20,18 @@ const Form = ({getMemeTitle}) => {
             color: "red"
         })
     }
-  }
+  };
  
   return (
-    <div>
-    <form className="form-container">
+    <form>
       <input maxLength={50} className="meme-input"
         value={sentence}
         type="text"
         placeholder="Enter text here"
         onChange={(event) => handleChange(event)}
       />
+      {sentence.length > 0 && <span style={handleColor()}> Remaining Characters: {handleMax()} </span> }
      </form>
-     {sentence.length > 0 && <span style={handleColor()}> Remaining Characters: {handleMax()} </span> }
-    </div>
   );
 };
 

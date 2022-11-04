@@ -6,6 +6,7 @@
     border-radius: 8px;
     height: 2rem;
     width: 20rem;
+    cursor: pointer;
 }
 
 .meme-save-button{
@@ -23,5 +24,6 @@
 
 .meme-save-button:hover {
   color: #FD6A02;
+  cursor: pointer;
 }
 

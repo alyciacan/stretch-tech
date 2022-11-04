@@ -5,9 +5,8 @@ const Home = ({images, handleClick}) => {
   return (
     <section className="description-container">
       <div className="description">
-        <h1>Art Gallery</h1>
-        <p>
-        Art Party is how the most sophisticated, discerning art history buffs get their meme jollies.  Simply click on your favorite oeuvre to get started!" <br/> <span className="right-arrow"> &#8594; </span>
+        <h2>Art Party </h2>
+        <p>is how the most sophisticated, discerning art history buffs get their meme jollies.  Simply click on your favorite oeuvre to get started! <br/> <span className="right-arrow"> &#8594; </span>
         </p>
       </div>
       <div className="images-container">
