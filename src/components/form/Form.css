@@ -17,18 +17,18 @@
   background-color: ghostwhite;
   border-radius: 8px;
 }
-
+.meme-save-button:hover {
+  transition: 5s;
+  background-color: #fd6a02;
+  cursor: pointer;
+}
 .meme-save-button:disabled {
   transition: 5s;
   text-decoration: line-through;
   cursor: auto;
   background-color: red;
 }
-.meme-save-button:hover {
-  transition: 5s;
-  background-color: #fd6a02;
-  cursor: pointer;
-}
+
 
 .form-container,
 .container {
