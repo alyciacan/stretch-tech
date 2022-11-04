@@ -44,7 +44,7 @@ const IndividualPainting = ({selectedId, setMemeTitle, memeTitle}) => {
           <h2 className='individual-painting-artist'>Artist: {artist} | {year}</h2>
           <p className='individual-painting-description'>{description}</p>
           <p className="memeTitle">{memeTitle}</p>
-          <button className=" meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
+          <button className="meme-save-button" type="button" onClick={() => setMemes([{memeTitle, img, id}, ...memes]) }>Save Meme</button>
         </div>
       </section> 
     )
