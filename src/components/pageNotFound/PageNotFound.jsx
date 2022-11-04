@@ -5,7 +5,7 @@ export default function PageNotFound() {
   return (
     <div>
       <h1>Page not found</h1>
-      <p>
+      <p className='error-text'>
         We looked all over, but the page seems to have gotten away from us! Try
         this one:
       </p>

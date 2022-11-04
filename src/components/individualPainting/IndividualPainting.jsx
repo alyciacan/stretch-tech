@@ -4,12 +4,9 @@ import './IndividualPainting.css'
 import { MemeContext } from '../../contexts/MemeContext'
 import Form from '../form/Form';
 
-
-
 const IndividualPainting = ({ selectedId }) => {
   const [paintingObject, setPaintingObject] = useState({});
   const [memeTitle, setMemeTitle] = useState("")
-
   useEffect(() => {
     const findPainting = () => {
     getSinglePainting(selectedId)
@@ -36,7 +33,7 @@ const IndividualPainting = ({ selectedId }) => {
   };
 
   const saveMeme = () => {
-    setMemes([{memeTitle, img, id}, ...memes]);
+    setMemes([{memeTitle, img, memeId: Date.now()}, ...memes])
     setMemeTitle("")
   };
 

@@ -8,7 +8,7 @@ const Navbar = () => {
                 <Link className="navbar-link" to='/' >
                     <img src={ logo } alt="Art Party logo" className="logo-img"/>
                 </Link>
-                <NavLink to="/mygallery" className="navbar-link">my gallery</NavLink>
+                <NavLink to="/mygallery" className="navbar-link button">My gallery</NavLink>
             </nav>
     )
 }
