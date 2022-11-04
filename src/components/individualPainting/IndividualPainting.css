@@ -8,16 +8,16 @@
 }
 
 .individual-painting {
-  box-sizing: border-box;
-  display: flex;
-  margin-top: 8em;
-  margin-left: 6em;
-  margin-right: 6em;
-  justify-content: space-between;
-  flex-direction: row;
   align-items: center;
   background: rgb(255, 255, 255);
   box-shadow: 0px 4px 15px -4px rgba(234, 134, 12, 0.893);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8em;
+  margin-left: 6em;
+  margin-right: 6em;
 }
 
 .individual-painting-img {
@@ -92,3 +92,14 @@
 }
 
 
+.home-button{
+  font-size: 3rem;
+  right: 2%;
+  position: fixed;
+  top: 12%;
+  color: rgb(0, 0, 0);
+}
+
+.home-button:hover{
+  color: rgba(234, 134, 12, 0.893);
+}
