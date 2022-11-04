@@ -92,7 +92,7 @@ describe('As a user, when I load the application, I can see a collection of pain
         .url().should('eq', 'http://localhost:3000/IndividualPainting/SK-A-4050')
       }) 
 
-    it.only('should display a page loading message while waiting for a paintings to display on page', () => {
+    it.skip('should display a page loading message while waiting for a paintings to display on page', () => {
       cy
       .get('.images-container').should('exist')
       .get(':nth-child(1) > .images').should('be.visible')
