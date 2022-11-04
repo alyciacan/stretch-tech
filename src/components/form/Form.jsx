@@ -10,7 +10,7 @@ const Form = ({ getMemeTitle, saveMeme }) => {
   };
 
   const handleMax = () => {
-    const maxLength = 30 - sentence.length
+    const maxLength = 50 - sentence.length
     return maxLength
   };
 
@@ -28,9 +28,9 @@ const Form = ({ getMemeTitle, saveMeme }) => {
   };
 
   return (
-    <section className="container">
       <form className="form-container">
-        <input
+        <div className="container">        
+          <input
           maxLength={50}
           className="meme-input"
           value={sentence}
@@ -43,7 +43,7 @@ const Form = ({ getMemeTitle, saveMeme }) => {
             Remaining Characters: {handleMax()}
           </span>
         )}
-      </form>
+        </div>
         <button
           disabled={!sentence}
           className="meme-save-button"
@@ -52,7 +52,7 @@ const Form = ({ getMemeTitle, saveMeme }) => {
         >
           Save Meme
         </button>
-    </section>
+      </form>
   );
 };
 
