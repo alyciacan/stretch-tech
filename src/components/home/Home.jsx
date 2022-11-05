@@ -2,6 +2,21 @@ import PaintingCard from '../paintingCard/PaintingCard'
 import "./Home.css";
 
 const Home = ({images, handleClick}) => {
+
+  const paintings = images.map(image => {
+    const { url } = image.webImage
+    const { name, objectNumber } = image
+      return (
+        <PaintingCard
+          url={url}
+          name={name}
+          id={objectNumber}
+          key={objectNumber}
+          cb={handleClick}
+        />  
+      )
+  })
+
   return (
     <section className="description-container">
       <div className="description">
@@ -12,19 +27,7 @@ const Home = ({images, handleClick}) => {
         <h3 className="right-arrow">Let's make some memes! &#8594;</h3>
       </div>
       <div className="images-container">
-        {images && images?.map(image => {
-					const { url } = image.webImage
-					const { name, objectNumber } = image
-						return (
-							<PaintingCard
-								url={url}
-								name={name}
-								id={objectNumber}
-								key={objectNumber}
-								cb={handleClick}
-							/>  
-						)
-				})}
+        { paintings }
       </div>
     </section>
   );
