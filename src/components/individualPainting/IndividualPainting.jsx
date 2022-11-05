@@ -39,9 +39,10 @@ const IndividualPainting = ({ selectedId }) => {
     setMemeTitle("");
   };
 
-  if (!id) {
-    return <h3>Loading...</h3>;
-  } else {
+  if(!id) {
+    return (
+    <h3 className='loading-text'>Loading...</h3>
+  )} else {
     return (
       <section className="individual-painting">
         <React.Fragment>
