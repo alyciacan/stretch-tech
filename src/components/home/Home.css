@@ -2,6 +2,8 @@
   text-align: start;
   flex-direction: column;
   grid-area: text;
+  display: flex;
+  max-width: min-content;
 }
 
 .description p, 
@@ -35,10 +37,8 @@ h2 {
 
 .description-container {
   display: grid;
-  grid-template-areas: 
-    "text gallery gallery gallery gallery"
-    "text gallery gallery gallery gallery"
-    "text gallery gallery gallery gallery";
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "text gallery";
 }
 
 @media screen and (max-width: 900px) {
