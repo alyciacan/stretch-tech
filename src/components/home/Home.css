@@ -16,16 +16,17 @@ h2 {
 }
 
 .images-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 0px; 
-  grid-row-gap: 0px;  
+  display: flex;
+  flex-wrap: wrap;
   grid-area: gallery;
+  margin: 1em auto;
 }
 
 .images {
-  max-width: 20vw;
   border-radius: 8px;
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
 }
 
 .right-arrow {
