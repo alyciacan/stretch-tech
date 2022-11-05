@@ -1,12 +1,13 @@
 .meme-input {
-    border-radius: 8px;
-    height: 2rem;
-    width: 20rem;
-    cursor: pointer;
+  border-radius: 8px;
+  height: 2rem;
+  width: 20rem;
+  cursor: pointer;
 }
 
-.meme-save-button{
-  margin-left: .5rem;
+.meme-save-button {
+  transition: 5s;
+  margin-left: 0.5rem;
   height: 2.5rem;
   width: 8rem;
   color: black;
@@ -16,18 +17,26 @@
   background-color: ghostwhite;
   border-radius: 8px;
 }
-
 .meme-save-button:hover {
-  background-color: #FD6A02;
+  transition: 5s;
+  background-color: #fd6a02;
   cursor: pointer;
 }
-
-.form-container, .container{
-    display: flex;
-    flex-direction: row;
+.meme-save-button:disabled {
+  transition: 5s;
+  text-decoration: line-through;
+  cursor: auto;
+  background-color: red;
 }
 
-.container{
-    flex-direction: column;
-    align-items: center;
+
+.form-container,
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
 }

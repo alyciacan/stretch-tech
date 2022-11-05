@@ -1,17 +1,21 @@
-import './MyGallery.css';
-import MemeCard from '../memeCard/MemeCard';
-import { MemeContext } from '../../contexts/MemeContext';
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import "./MyGallery.css";
+import MemeCard from "../memeCard/MemeCard";
+import { MemeContext } from "../../contexts/MemeContext";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
+import home from "../../images/home.png"
 
 const MyGallery = () => {
-    const { memes, setMemes } = useContext(MemeContext)
+  const { memes, setMemes } = useContext(MemeContext);
 
-    const getDeletedMeme = (clickedMemeId) => {
-        const copyOfMemes = [...memes]
-        const filtered = copyOfMemes.filter(meme => meme.memeId !== clickedMemeId)
-        setMemes(filtered)
-    }
+  const getDeletedMeme = (clickedMemeId) => {
+    const copyOfMemes = [...memes];
+    const filtered = copyOfMemes.filter(
+      (meme) => meme.memeId !== clickedMemeId
+    );
+    setMemes(filtered);
+  };
 
     const myMemes = memes.map(meme => {
         return (<MemeCard 
@@ -40,6 +44,5 @@ const MyGallery = () => {
         </section>
     )
 };
-
 
 export default MyGallery;
