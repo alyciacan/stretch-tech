@@ -17,37 +17,32 @@ const MyGallery = () => {
     setMemes(filtered);
   };
 
-  const myMemes = memes.map((meme) => {
+    const myMemes = memes.map(meme => {
+        return (<MemeCard 
+            getDeletedMeme={getDeletedMeme}
+            memeId={meme.memeId}
+            img={meme.img}
+            memeTitle={meme.memeTitle}
+            key={meme.memeId}
+            />
+            )
+    })
+
+    const userPrompt = <h4 className="user-prompt">Did you know that Van Gogh produced 900 paintings in just 10 years? And you haven't made a single meme! <Link to="/" className="user-prompt">Get to work!</Link></h4>
+
+    const checkForMemes = () => {
+        if(myMemes.length) {
+            return myMemes;
+        } else {
+            return userPrompt;
+        }
+    }
+
     return (
-      <MemeCard
-        getDeletedMeme={getDeletedMeme}
-        memeId={meme.memeId}
-        img={meme.img}
-        memeTitle={meme.memeTitle}
-        key={meme.memeId}
-      />
-    );
-  });
-
-  const userPrompt = (
-    <p>
-      No memes yet! Make some <Link to="/home">here</Link>!
-    </p>
-  );
-
-  // const checkForMemes = () => {
-  //     memes.length ? memes : userPrompt
-  // }
-  return (
-    <section className="my-gallery">
-      <Link to="/">
-        <span className="home-button" type="button">
-          <img src={home} alt="Home" />
-        </span>
-      </Link>
-      {myMemes}
-    </section>
-  );
+        <section className='my-gallery'>
+            { checkForMemes() }
+        </section>
+    )
 };
 
 export default MyGallery;
