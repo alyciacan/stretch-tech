@@ -4,7 +4,6 @@ import "./IndividualPainting.css";
 import { MemeContext } from "../../contexts/MemeContext";
 import Form from "../form/Form";
 import { Link } from "react-router-dom";
-
 import home from "../../images/home.png";
 
 const IndividualPainting = ({ selectedId }) => {
@@ -46,10 +45,8 @@ const IndividualPainting = ({ selectedId }) => {
     return (
       <section className="individual-painting">
         <React.Fragment>
-          <Link to="/">
-            <span className="home-button" type="button">
-              <img src={home} alt="Home"/>
-            </span>
+          <Link to="/" className="home-button" >
+              <img src={home} alt="Home button" role="button"/>
           </Link>
           <img className="individual-painting-img" src={img} alt={title} />
           <div className=".painting-details">

@@ -39,6 +39,9 @@ const MyGallery = () => {
 
     return (
         <section className='my-gallery'>
+            <Link to="/" className="home-button">
+                <img src={home} alt="Home" />
+            </Link>
             { checkForMemes() }
         </section>
     )
