@@ -1,8 +1,12 @@
 const checkResponse = (response) => {
-	if (!response.ok) {
-		throw new Error(response.statusText);
+	try {
+		if (!response.ok) {
+			throw new Error(response.statusText);
+		}
+		return response.json();
+	} catch(error) {
+		return error;
 	}
-	return response.json();
 }
 
 const getAllArt = () => {
