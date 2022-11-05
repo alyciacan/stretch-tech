@@ -3,7 +3,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 15px; 
     grid-row-gap: 15px;  
-    margin: 0vw 5vw 0vw 5vw;     
+    background-image: linear-gradient(white, #aaa); 
+    max-width: 100vw; 
+    height: 100vh;
+    padding: 8px;
+
 }
 
 @media screen and (max-width: 800px) {
@@ -14,6 +18,6 @@
 
 @media screen and (min-width: 1000px) {
     .my-gallery {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
