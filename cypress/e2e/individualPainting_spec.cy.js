@@ -5,6 +5,11 @@ describe("A user can view a single painting with its information when he clicks 
       "https://www.rijksmuseum.nl/api/en/collection/#SK-C-5?key=AgQXh8Og",
       { fixture: "painting1.json" }
     ).as("artObject");
+    cy.intercept(
+      "GET",
+      "https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
+      { fixture: "allPaintings.json" }
+    ).as("artObject");
     cy.visit("http://localhost:3000/");
     cy.get("#SK-C-5").click();
   });
@@ -49,13 +54,13 @@ describe("A user can view a single painting with its information when he clicks 
     cy.get(".memeTitle").contains("this is a test").should("be.visible");
   });
 
-  it("should be able to go back home", () => {
-    cy.get(".home-button > img").click();
+  it.only("should be able to go back home", () => {
     cy.intercept(
       "GET",
       "https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
       { fixture: "allPaintings.json" }
     ).as("artObject");
+    cy.get(".home-button > img").click();
     cy.get(".images-container").should("exist");
     cy.get("#SK-C-216").should("exist").should("be.visible");
   });
