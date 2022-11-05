@@ -10,7 +10,7 @@ export default function PageNotFound() {
         this one:
       </p>
       <Link to="/">
-        <button>Home</button>
+        <button className='error-button'>Home</button>
       </Link>
     </div>
   );

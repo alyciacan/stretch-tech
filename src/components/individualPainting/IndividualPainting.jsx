@@ -39,7 +39,7 @@ const IndividualPainting = ({ selectedId }) => {
 
   if(!id) {
     return (
-    <h3>Loading...</h3>
+    <h3 className='loading-text'>Loading...</h3>
   )} else {
     return (
       <section className='individual-painting'>
