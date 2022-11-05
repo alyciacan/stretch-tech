@@ -103,3 +103,15 @@
   transition: 1s;
   background-color: #FD6A02;
 }
+
+@media screen and (max-width: 1200px) {
+  .individual-painting {
+    flex-direction: column;
+  }
+  .individual-painting-img {
+    border-radius: 10px;
+  }
+  .meme-form {
+    justify-content: center;
+  }
+}
