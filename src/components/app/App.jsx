@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import React, {useState, useEffect} from "react";
 import Home from "../home/Home";
@@ -16,11 +16,10 @@ function App() {
 
   useEffect(() => {
     const getImages = () => {
-      getAllArt()
-      .then(response => {setImages(response.artObjects)})
-      .catch(err => console.log(err))    
-    };
-    getImages();
+        getAllArt()
+          .then(response => {setImages(response.artObjects)})
+    }
+    getImages()
   }, []);
 
   return (
@@ -55,7 +54,7 @@ function App() {
           render={() => {
             return <MyGallery />
           }} />
-        <Route component={PageNotFound} />
+        <Route path="/error" component={PageNotFound} />
       </Switch>
     </div>
   );

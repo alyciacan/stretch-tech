@@ -1,8 +1,13 @@
 const checkResponse = (response) => {
-	if (!response.ok) {
-		throw new Error(response.statusText);
+	console.log(response)
+	try {
+		if (!response.ok) {
+			throw new Error(response.statusText);
+		}
+		return response.json();
+	} catch(error){
+		console.log(error, "hello")
 	}
-	return response.json();
 }
 
 const getAllArt = () => {
