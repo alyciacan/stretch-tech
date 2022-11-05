@@ -18,6 +18,7 @@ function App() {
     const getImages = () => {
         getAllArt()
           .then(response => {setImages(response.artObjects)})
+          .catch(response => response)
     }
     getImages()
   }, []);

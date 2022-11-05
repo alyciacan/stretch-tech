@@ -1,12 +1,11 @@
 const checkResponse = (response) => {
-	console.log(response)
 	try {
 		if (!response.ok) {
 			throw new Error(response.statusText);
 		}
 		return response.json();
-	} catch(error){
-		console.log(error, "hello")
+	} catch(error) {
+		return error;
 	}
 }
 
