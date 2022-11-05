@@ -41,7 +41,7 @@ describe('As a user, when I load the application, I can see a collection of pain
   
   it('should be able to click on the myGallery button and be taken to myGallery', () => {
     cy
-    .get('.button')
+    .get('.my-gallery-link')
     .click()
   })
   
@@ -62,7 +62,9 @@ describe('As a user, when I load the application, I can see a collection of pain
     cy
     .get('.images-container').should('exist')
     .get(':nth-child(1) > .images').should('be.visible')
-    .click()
+    .get('#SK-A-5033').click()
+    .get('.images-container').should('not.exist')
+    .url().should('eq', 'http://localhost:3000/IndividualPainting/SK-A-5033')
   })
     
     it('should not display details for an individual painting', () => {
@@ -86,17 +88,15 @@ describe('As a user, when I load the application, I can see a collection of pain
         .url().should('eq', 'http://localhost:3000/IndividualPainting/SK-A-4050')
       }) 
 
-    it.only('should display a page loading message while waiting for a paintings to display on page', () => {
+    it('should display a page loading message while waiting for a paintings to display on page', () => {
       cy
       .get('.images-container').should('exist')
       .get(':nth-child(1) > .images').should('be.visible')
-      .click()
-      // .intercept("GET", "https://www.rijksmuseum.nl/api/en/collection/#SK-C-5?key=AgQXh8Og", {fixture: "painting1.json"}).as("artObject");
-      // cy.get("#SK-C-5")
+      .get('#SK-C-5').click()
+      .intercept("GET", "https://www.rijksmuseum.nl/api/en/collection/#SK-C-5?key=AgQXh8Og", {fixture: "painting1.json"}).as("painting1");
       cy.get('.loading-text').should('exist').contains('Loading...')
-      .wait('@painting1').then(() => {
-        cy.get('.loading-text').should('not.exist')
-    })
+      cy.get('.loading-text').should('not.exist')
+  
     })
   })
     
