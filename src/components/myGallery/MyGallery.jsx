@@ -24,14 +24,19 @@ const MyGallery = () => {
             )
     })
 
-    const userPrompt = <p>No memes yet! Make some <Link to="/home">here</Link>!</p>
+    const userPrompt = <h4 className="user-prompt">Did you know that Van Gogh produced 900 paintings in just 10 years? And you haven't made a single meme! <Link to="/" className="user-prompt">Get to work!</Link></h4>
 
-    // const checkForMemes = () => {
-    //     memes.length ? memes : userPrompt
-    // }
+    const checkForMemes = () => {
+        if(myMemes.length) {
+            return myMemes;
+        } else {
+            return userPrompt;
+        }
+    }
+
     return (
         <section className='my-gallery'>
-            { myMemes }
+            { checkForMemes() }
         </section>
     )
 };
