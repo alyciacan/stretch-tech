@@ -18,7 +18,13 @@
     font-size: large;
 }
 
-.navbar-link:hover {
+.my-gallery-link:hover {
+    transition: 1s;
+    color: #FD6A02;
+}
+
+.my-gallery-link:active {
+    transition: 1s;
     color: #FD6A02;
 }
 

@@ -3,7 +3,6 @@ import MemeCard from "../memeCard/MemeCard";
 import { MemeContext } from "../../contexts/MemeContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import home from "../../images/home.png"
 
 const MyGallery = () => {
