@@ -50,11 +50,11 @@ describe("A user can view a single painting with its information when he clicks 
     cy.get(".meme-input").should("exist").click().type("this is a test");
     cy.get(".meme-save-button").click();
     cy.get(".meme-save-button").should("be.disabled");
-    cy.get(".button").click();
+    cy.get('.my-gallery-link').click();
     cy.get(".memeTitle").contains("this is a test").should("be.visible");
   });
 
-  it.only("should be able to go back home", () => {
+  it("should be able to go back home", () => {
     cy.intercept(
       "GET",
       "https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
