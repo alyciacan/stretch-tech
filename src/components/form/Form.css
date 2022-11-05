@@ -24,11 +24,11 @@
 }
 .meme-save-button:disabled {
   transition: 5s;
-  text-decoration: line-through;
+  box-shadow: none;
   cursor: auto;
-  background-color: red;
+  color: gray;
+  background-color: rgb(219, 219, 219);
 }
-
 
 .form-container,
 .container {
