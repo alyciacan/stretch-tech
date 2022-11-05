@@ -63,13 +63,7 @@ describe('As a user, when I load the application, I can see a collection of pain
     .get('.images-container').should('exist')
     .get(':nth-child(1) > .images').should('be.visible')
     .click()
-    cy.intercept(
-      'GET', 
-      'https://www.rijksmuseum.nl/api/en/collection/**', 
-      { fixture: 'painting2.json'}
-      )
-      .visit("http://localhost:3000/IndividualPainting/SK-A-4050")
-    })
+  })
     
     it('should not display details for an individual painting', () => {
       cy
@@ -92,18 +86,17 @@ describe('As a user, when I load the application, I can see a collection of pain
         .url().should('eq', 'http://localhost:3000/IndividualPainting/SK-A-4050')
       }) 
 
-    it.skip('should display a page loading message while waiting for a paintings to display on page', () => {
+    it.only('should display a page loading message while waiting for a paintings to display on page', () => {
       cy
       .get('.images-container').should('exist')
       .get(':nth-child(1) > .images').should('be.visible')
       .click()
-      .intercept(
-        'GET', 
-        'https://www.rijksmuseum.nl/api/en/collection/**', 
-        { fixture: 'painting2.json'}
-        )
-        cy.visit("http://localhost:3000/IndividualPainting/SK-A-4050")
-      .get('.loading-text').contains('Loading...')
+      // .intercept("GET", "https://www.rijksmuseum.nl/api/en/collection/#SK-C-5?key=AgQXh8Og", {fixture: "painting1.json"}).as("artObject");
+      // cy.get("#SK-C-5")
+      cy.get('.loading-text').should('exist').contains('Loading...')
+      .wait('@painting1').then(() => {
+        cy.get('.loading-text').should('not.exist')
+    })
     })
   })
     
