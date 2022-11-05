@@ -1,5 +1,6 @@
 describe('MyGallery appearance', () => {
   beforeEach(() => {
+    cy.intercept('GET', 'https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn', { fixture: 'allPaintings'})
     cy.visit('http://localhost:3000/mygallery')
   });
 
@@ -18,7 +19,9 @@ describe('MyGallery appearance', () => {
 describe('MyGallery functionality', () => {
   beforeEach(() => {
     cy
+    .intercept('GET', 'https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn', { fixture: 'allPaintings'}).as('getPaintings')
     .visit('http://localhost:3000/mygallery')
+    .wait('@getPaintings')
     .get('.user-prompt > a').click()
     .get('#SK-A-5033').click()
     .get('.meme-input').type('When that Turing t-shirt arrives')
