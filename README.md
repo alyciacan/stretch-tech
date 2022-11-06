@@ -12,8 +12,8 @@ We are Mod 3 students in the Front-End Program at [Turing School of Software and
 
 Learning Goals for this project included:      
 ✔️ Use at least one external API      
-✔️ Implement a “Stretch Technology”
-✔️ Create a multi page UX using React Router 
+✔️ Implement a “Stretch Technology” Global State Management: Context API
+✔️ Create a multi page engaging UX using React Router 
 
 [Link to Project Description](https://frontend.turing.edu/projects/module-3/stretch.html)
 
@@ -52,8 +52,8 @@ Learning Goals for this project included:
 ## Dev Notes
 ### Wins
 - [x] Excellent group dynamic and communication
-- [x] Smooth git workflow and navigation through merge conflicts
-- [X] Problem solving with learning a new technology: Context API
+- [x] Navigating through merge conflicts and maintaining git workflow 
+- [X] Take advantage of React's context to learn how it offers a way to share information across components, organizing it in a central location and ensuring that any component that requests it can access it (to prevent props drilling information into components).
 
 ### Opportunities for growth
 - [x] Learning Cypress syntax
