@@ -18,8 +18,10 @@ const Home = ({images, handleClick}) => {
         <React.Fragment>
         <div className="description">
         <h2>Art Party </h2>
-        <p>is how the most sophisticated, discerning art history buffs get their meme jollies.  Simply click on your favorite oeuvre to get started! <br/> <span className="right-arrow"> <strong>Let's make some Memes  &#8594;</strong> </span>
-        </p>
+        <p>is how the most sophisticated, discerning art history buffs get their meme jollies.  
+          Simply click on your favorite oeuvre to get started!</p>
+          <br/> 
+        <h3 className="right-arrow">Let's make some memes! &#8594;</h3>
       </div>
           <div className="images-container">
                   {images && images?.map(image => {
