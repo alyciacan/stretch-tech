@@ -10,7 +10,7 @@ describe('As a user, when I load the application, I can see a collection of pain
   it.only('should display an error message if paintings are unable to be displayed on the screen', () => {
     cy.intercept(
       "GET",
-      "https://www.rijksmuseums.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
+      "https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
       {
         statusCode: 404,
         body: {
