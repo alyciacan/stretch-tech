@@ -7,7 +7,7 @@ describe('As a user, when I load the application, I can see a collection of pain
     })
   })
 
-  it.skip('should display an error message (500 status code) if paintings are unable to be displayed on the screen', () => {
+  it('should display an error message (500 status code) if paintings are unable to be displayed on the screen', () => {
     cy.intercept(
       "GET",
       "https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",

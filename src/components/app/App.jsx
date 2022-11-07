@@ -56,6 +56,8 @@ function App() {
             return <MyGallery />
           }} />
         <Route path="/error" component={PageNotFound} />
+
+        <PageNotFound/>
       </Switch>
     </div>
   );
