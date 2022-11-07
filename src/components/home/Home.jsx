@@ -10,7 +10,7 @@ const Home = ({images, handleClick}) => {
     setTimeout(() => {
       setMessage("Oops, there was an error on our end! Try again later.")
     }, 2000)
-  }, [message])
+  }, [message]);
 
   const checkImages = () => {
     if(images.length) {
@@ -41,7 +41,7 @@ const Home = ({images, handleClick}) => {
     } else {
       return <h4 className="error-message">{ message }</h4>
     }
-  }
+  };
 
   return (
     <section className="description-container">
