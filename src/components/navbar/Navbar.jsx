@@ -4,13 +4,13 @@ import logo from './artparty-logo.png';
 
 const Navbar = () => {
     return (
-            <nav className="navbar">
-                <Link className="navbar-link" to='/' >
-                    <img src={ logo } alt="Art Party logo" className="logo-img"/>
-                </Link>
-                <NavLink to="/mygallery" className="navbar-link button">My gallery</NavLink>
-            </nav>
+        <nav className="navbar">
+            <Link className="navbar-link" to='/' >
+                <img src={ logo } alt="Art Party logo" className="logo-img"/>
+            </Link>
+            <NavLink to="/mygallery" className="my-gallery-link">My gallery</NavLink>
+        </nav>
     )
-}
+};
 
 export default Navbar;

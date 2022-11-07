@@ -8,31 +8,31 @@
 }
 
 .individual-painting {
-  box-sizing: border-box;
-  display: flex;
-  margin-top: 8em;
-  margin-left: 6em;
-  margin-right: 6em;
-  justify-content: space-between;
-  flex-direction: row;
   align-items: center;
   background: rgb(255, 255, 255);
   box-shadow: 0px 4px 15px -4px rgba(234, 134, 12, 0.893);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8em;
+  margin-left: 6em;
+  margin-right: 6em;
 }
 
 .individual-painting-img {
   display: flex;
   justify-content: center;
   height:400px;
-  width: 400px;
+  width: 1400px;
   border-radius: 10px 0px 0px 10px;
   color: black;
+  margin-left: 5px;
 }
 
 .painting-details {
   display: flex;
   flex-direction: column;
-  padding: 5px;
   margin: 10px;
   height: 50%;
   width: 30%
@@ -75,20 +75,45 @@
 .meme-title {
   display: flex;
   position: fixed;
-  top: 28rem;
+  top: 24rem;
   left: 8rem;
   font-size: 2.5vw;
   color: white;
   inline-size: 20rem;
   word-break: break-all; 
   color: white;  
+  max-width: 100%;
 }
 
 .meme-form {
   display: flex;
   align-items: center;
   margin-bottom: 2px;
-  margin-left: 40px;
+  justify-content: center;
 }
 
+.home-button {
+  font-size: 3rem;
+  right: 2%;
+  position: fixed;
+  top: 12%;
+  border-radius: 20%;
+}
 
+.home-button:hover {
+  transition: 1s;
+  background-color: #FD6A02;
+}
+
+@media screen and (max-width: 1200px) {
+  .individual-painting {
+    flex-direction: column;
+    margin: 10px;
+  }
+  .individual-painting-img {
+    border-radius: 10px;
+  }
+  .meme-form {
+    justify-content: center;
+  }
+}

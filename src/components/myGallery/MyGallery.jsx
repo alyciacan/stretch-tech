@@ -1,17 +1,20 @@
-import './MyGallery.css';
-import MemeCard from '../memeCard/MemeCard';
-import { MemeContext } from '../../contexts/MemeContext';
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import "./MyGallery.css";
+import MemeCard from "../memeCard/MemeCard";
+import { MemeContext } from "../../contexts/MemeContext";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import home from "../../images/home.png"
 
 const MyGallery = () => {
-    const { memes, setMemes } = useContext(MemeContext)
+  const { memes, setMemes } = useContext(MemeContext);
 
-    const getDeletedMeme = (clickedMemeId) => {
-        const copyOfMemes = [...memes]
-        const filtered = copyOfMemes.filter(meme => meme.memeId !== clickedMemeId)
-        setMemes(filtered)
-    }
+  const getDeletedMeme = (clickedMemeId) => {
+    const copyOfMemes = [...memes];
+    const filtered = copyOfMemes.filter(
+      (meme) => meme.memeId !== clickedMemeId
+    );
+    setMemes(filtered);
+  };
 
     const myMemes = memes.map(meme => {
         return (<MemeCard 
@@ -22,19 +25,26 @@ const MyGallery = () => {
             key={meme.memeId}
             />
             )
-    })
+    });
 
-    const userPrompt = <p>No memes yet! Make some <Link to="/home">here</Link>!</p>
+    const userPrompt = <h4 className="user-prompt">Did you know that Van Gogh produced 900 paintings in just 10 years? And you haven't made a single meme! <Link to="/" className="user-prompt">Get to work!</Link></h4>
 
-    // const checkForMemes = () => {
-    //     memes.length ? memes : userPrompt
-    // }
+    const checkForMemes = () => {
+        if(myMemes.length) {
+            return myMemes;
+        } else {
+            return userPrompt;
+        }
+    };
+
     return (
         <section className='my-gallery'>
-            { myMemes }
+            <Link to="/" className="home-button">
+                <img src={home} alt="Home" />
+            </Link>
+            { checkForMemes() }
         </section>
     )
 };
-
 
 export default MyGallery;
