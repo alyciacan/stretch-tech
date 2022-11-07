@@ -24,15 +24,15 @@
   display: flex;
   justify-content: center;
   height:400px;
-  width: 400px;
+  width: 1400px;
   border-radius: 10px 0px 0px 10px;
   color: black;
+  margin-left: 5px;
 }
 
 .painting-details {
   display: flex;
   flex-direction: column;
-  padding: 5px;
   margin: 10px;
   height: 50%;
   width: 30%
@@ -75,20 +75,21 @@
 .meme-title {
   display: flex;
   position: fixed;
-  top: 28rem;
+  top: 24rem;
   left: 8rem;
   font-size: 2.5vw;
   color: white;
   inline-size: 20rem;
   word-break: break-all; 
   color: white;  
+  max-width: 100%;
 }
 
 .meme-form {
   display: flex;
   align-items: center;
   margin-bottom: 2px;
-  margin-left: 40px;
+  justify-content: center;
 }
 
 .home-button {
@@ -102,4 +103,17 @@
 .home-button:hover {
   transition: 1s;
   background-color: #FD6A02;
+}
+
+@media screen and (max-width: 1200px) {
+  .individual-painting {
+    flex-direction: column;
+    margin: 10px;
+  }
+  .individual-painting-img {
+    border-radius: 10px;
+  }
+  .meme-form {
+    justify-content: center;
+  }
 }
