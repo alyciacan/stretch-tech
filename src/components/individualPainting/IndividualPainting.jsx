@@ -9,6 +9,7 @@ import home from "../../images/home.png";
 const IndividualPainting = ({ selectedId }) => {
   const [paintingObject, setPaintingObject] = useState({});
   const [memeTitle, setMemeTitle] = useState("");
+  
   useEffect(() => {
     const findPainting = () => {
       getSinglePainting(selectedId).then((response) => {
@@ -41,29 +42,30 @@ const IndividualPainting = ({ selectedId }) => {
   if(!id) {
     return (
     <h3 className='loading-text'>Loading...</h3>
-  )} else {
-    return (
-      <section className="individual-painting">
-        <React.Fragment>
-          <Link to="/" className="home-button" >
-              <img src={home} alt="Home button" role="button"/>
-          </Link>
-          <img className="individual-painting-img" src={img} alt={title} />
-          <div className=".painting-details">
-            <h1 className="individual-painting-title">{title}</h1>
-            <h2 className="individual-painting-artist">
-              Artist: {artist} | {year}
-            </h2>
-            <p className="individual-painting-description">{description}</p>
-            <p className="meme-title">{memeTitle}</p>
-            <div className="meme-form">
-              <Form saveMeme={saveMeme} getMemeTitle={getMemeTitle} />
+    )
+  } else {
+      return (
+        <section className="individual-painting">
+          <React.Fragment>
+            <Link to="/" className="home-button" >
+                <img src={home} alt="Home button" role="button"/>
+            </Link>
+            <img className="individual-painting-img" src={img} alt={title} />
+            <div className=".painting-details">
+              <h1 className="individual-painting-title">{title}</h1>
+              <h2 className="individual-painting-artist">
+                Artist: {artist} | {year}
+              </h2>
+              <p className="individual-painting-description">{description}</p>
+              <p className="meme-title">{memeTitle}</p>
+              <div className="meme-form">
+                <Form saveMeme={saveMeme} getMemeTitle={getMemeTitle} />
+              </div>
             </div>
-          </div>
-        </React.Fragment>
-      </section>
-    );
-  }
+          </React.Fragment>
+        </section>
+      );
+    }
 };
 
 export default IndividualPainting;
