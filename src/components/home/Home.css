@@ -46,3 +46,9 @@ h2 {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.error-message {
+  grid-area: gallery;
+  margin-top: 20%;
+  margin-right: 20%;
+}
