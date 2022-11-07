@@ -2,10 +2,18 @@ import PaintingCard from '../paintingCard/PaintingCard'
 import "./Home.css";
 
 const Home = ({images, handleClick}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setMessage("Oops, there was an error on our end! Try again later.")
+    }, 2000)
+  }, [message]);
 
+  const checkImages = () => {
+    if(images.length) {
   const paintings = images.map(image => {
     const { url } = image.webImage
     const { name, objectNumber } = image
+
       return (
         <PaintingCard
           url={url}
@@ -15,6 +23,10 @@ const Home = ({images, handleClick}) => {
           cb={handleClick}
         />  
       )
+    } else {
+      return <h4 className="error-message">{ message }</h4>
+    }
+  };
   })
 
   return (
