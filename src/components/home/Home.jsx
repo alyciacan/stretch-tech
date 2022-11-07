@@ -2,11 +2,11 @@ import PaintingCard from "../paintingCard/PaintingCard";
 import { React, useState, useEffect } from "react";
 import "./Home.css";
 
-const Home = ({ images, handleClick }) => {
+const Home = ({ images, handleClick, error }) => {
   const [message, setMessage] = useState("loading...");
   useEffect(() => {
     setTimeout(() => {
-      setMessage("Oops, there was an error on our end! Try again later.");
+      setMessage("Oops, there was an error on our end! Try again later.") ;
     }, 2000);
   }, [message]);
 

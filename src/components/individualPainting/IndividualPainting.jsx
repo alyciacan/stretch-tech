@@ -25,7 +25,7 @@ const IndividualPainting = ({ selectedId }) => {
       });
     };
     findPainting();
-  }, []);
+  }, [paintingObject, selectedId]);
 
   const { id, title, description, img, artist, year } = paintingObject;
   const { memes, setMemes } = useContext(MemeContext);
