@@ -47,7 +47,8 @@ Learning Goals for this project included:
 ## Future Features
 - [x] Add a user login page
 - [x] Add a POST for users to add their own paintings
-- [x] 
+- [x] Add a way for user to edit existing memes and download them
+- [x] Zoom-in for existing memes
 
 ## Dev Notes
 ### Wins
@@ -56,8 +57,9 @@ Learning Goals for this project included:
 - [X] Take advantage of React's context to learn how it offers a way to share information across components, organizing it in a central location and ensuring that any component that requests it can access it (to prevent props drilling information into components).
 
 ### Opportunities for growth
-- [x] Learning Cypress syntax
-- [x] 
+- [x] Learning how to stub and intercept with Cypress testing
+- [x] Expanding our knowledge of Cypress syntax
+- [x] Practice using React hooks: UseState & useEffect
 
 ## Developed by:
 Jedeo Manirikumwenatwe |
@@ -77,6 +79,9 @@ alycia.canavan@gmail.com |
 
 ## Project planning & Acknowledgments 
 [Project Board with User Stories](https://github.com/users/alyciacan/projects/5) |
+- ZeroToMastery.io
 - Jordan Sullivan
 - John Boudreaux
+- Meg McBride
+- Shauna MacFarlane-Okongo
 
