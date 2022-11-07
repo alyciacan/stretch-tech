@@ -7,29 +7,29 @@ describe('As a user, when I load the application, I can see a collection of pain
     })
   })
 
-  it.skip('should display an error message (500 status code) if paintings are unable to be displayed on the screen', () => {
+  it.only('should display an error message if paintings are unable to be displayed on the screen', () => {
     cy.intercept(
       "GET",
-      "https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
+      "https://www.rijksmuseums.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn",
       {
-        statusCode: 500,
+        statusCode: 404,
         body: {
           error: "Not Found",
         },
       }
     )
     cy.visit("http://localhost:3000/")
-    cy.get(".error-text").contains(`We looked all over, but the page seems to have gotten away from us! Try
-    this one:`);
+    cy.get('.error-message').contains('loading...');
+    cy.get('h4.error-message').contains("Oops, there was an error on our end! Try again later.")
   });
 
   
   it('should bring a user to the error page if the user types in a bad URL', () => {
     cy
       .visit('http://localhost:3000/fsdf')
-      .get('h1').contains('Page not found')
+      .get('h1.error-text').contains('Page not found')
       .get('p.error-text').contains(`We looked all`)
-      .get('button.error-button').contains('Hom')
+      .get('button.error-button').contains('Home')
     
   })
   
