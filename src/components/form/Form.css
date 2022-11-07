@@ -6,7 +6,7 @@
 }
 
 .meme-save-button {
-  transition: 5s;
+  transition: 2s;
   margin-left: 0.5rem;
   height: 2.5rem;
   width: 8rem;
@@ -18,7 +18,7 @@
   border-radius: 8px;
 }
 .meme-save-button:hover {
-  transition: 5s;
+  transition: 2s;
   background-color: #fd6a02;
   cursor: pointer;
 }
