@@ -2,7 +2,7 @@
 <img width='600' alt='Art Party logo' src='https://user-images.githubusercontent.com/102934145/200095953-65adde0f-f257-4019-bb76-0ca7b27685a4.png'>
 </p>
 
-### [Deployed Project]
+### [Deployed Project](https://art-party.vercel.app/)
 
 ## Overview
 Art Party is how the most sophisticated, discerning art history buffs get their meme jollies. Simply click on your favorite oeuvre to get started!  The goal of this project is to create a React application that allows users to browse through a collection of paintings and see what piques their interest!  Users can click on a specific painting and view its details or create their own meme!  If a user is particularly fond of their meme, they can save it to their gallery.  The user can use the browsers forward and back arrows or click the home button/Art Party logo to return to the home page.  We have added in error handling for server side errors.
@@ -18,7 +18,7 @@ Learning Goals for this project included:
 [Link to Project Description](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Demo
-![Art-Party-GIF]
+![Art-Party-GIF](https://user-images.githubusercontent.com/102934145/200423122-94695f69-cf70-469a-9f73-f307b675d72b.gif)
 
 ## Setup
 1. From your terminal, `cd` back to your parent directory
