@@ -1,13 +1,9 @@
 const checkResponse = (response) => {
-	try {
 		if (!response.ok) {
 			throw new Error(response.statusText);
 		}
 		return response.json();
-	} catch(error) {
-		return error;
-	}
-}
+	} 
 
 const getAllArt = () => {
 	return fetch("https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn")

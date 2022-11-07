@@ -17,10 +17,10 @@ describe('As a user, when I load the application, I can see a collection of pain
           error: "Not Found",
         },
       }
-    )
+    ).as('error-message')
     cy.visit("http://localhost:3000/")
-    cy.get('.error-message').contains('loading...');
-    cy.get('h4.error-message').contains("Oops, there was an error on our end! Try again later.")
+    cy.get('.error-message').contains('loading...').wait('@error-message')
+    cy.get('.error-message').contains("Oops, there was an error on our end! Try again later.")
   });
 
   

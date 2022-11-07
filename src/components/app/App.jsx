@@ -1,7 +1,5 @@
 import "./App.css";
-
 import { Switch, Route,} from "react-router-dom";
-
 import React, {useState, useEffect} from "react";
 import Home from "../home/Home";
 import IndividualPainting from "../individualPainting/IndividualPainting";
@@ -10,16 +8,16 @@ import MyGallery from "../myGallery/MyGallery";
 import PageNotFound from "../pageNotFound/PageNotFound";
 import { getAllArt } from "../../apiCalls"
 
-
 function App() {
   const [images, setImages] = useState([]);
 
+
   useEffect(() => {
     const getImages = () => {
-        getAllArt()
-          .then(response => {setImages(response.artObjects)})
-          .catch(response => response)
-    }
+      getAllArt()
+        .then(response => {setImages(response.artObjects)})
+        .catch(response => response)
+  }
     getImages()
   }, []);
 
