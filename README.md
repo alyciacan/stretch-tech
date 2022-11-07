@@ -1,5 +1,5 @@
 <p align="center">
-<img width='500' alt='Art Party logo' src='https://user-images.githubusercontent.com/102934145/200095953-65adde0f-f257-4019-bb76-0ca7b27685a4.png'>
+<img width='400' alt='Art Party logo' src='https://user-images.githubusercontent.com/102934145/200095953-65adde0f-f257-4019-bb76-0ca7b27685a4.png'>
 </p>
 
 ### [Deployed Project](https://art-party.vercel.app/)
@@ -12,7 +12,7 @@ We are Mod 3 students in the Front-End Program at [Turing School of Software and
 
 Learning Goals for this project included:      
 ✔️ Use at least one external API      
-✔️ Implement a “stretch technology”: Global State Management: React's Context API
+✔️ Implement a “stretch technology”: Global State Management: React's Context API             
 ✔️ Create a multi-page engaging UX using React Router 
 
 [Link to Project Description](https://frontend.turing.edu/projects/module-3/stretch.html)
