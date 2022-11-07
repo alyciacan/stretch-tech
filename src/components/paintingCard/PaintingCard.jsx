@@ -10,6 +10,6 @@ const PaintingCard = ({url, name, id, memeText}) => {
         <p className="memeTitle">{memeText}</p>
       </Link>
     );
-}
+};
 
 export default PaintingCard

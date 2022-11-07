@@ -27,6 +27,16 @@ const Form = ({ getMemeTitle, saveMeme }) => {
     setSentence("");
   };
 
+  const checkInput = () => {
+    if(sentence.length) {
+      return (
+        <span style={handleColor()}>
+          Remaining Characters: {handleMax()}
+        </span>
+      )
+    }
+  }
+
   return (
       <form className="form-container">
         <div className="container">        
@@ -38,11 +48,7 @@ const Form = ({ getMemeTitle, saveMeme }) => {
           placeholder="Enter text here"
           onChange={(event) => handleChange(event)}
         />
-        {sentence.length > 0 && (
-          <span style={handleColor()}>
-            Remaining Characters: {handleMax()}
-          </span>
-        )}
+        { checkInput() }
         </div>
         <button
           disabled={!sentence}
