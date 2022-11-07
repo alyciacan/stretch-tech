@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+<p align="center">
+<img width='600' alt='Art Party logo' src='https://user-images.githubusercontent.com/102934145/200095953-65adde0f-f257-4019-bb76-0ca7b27685a4.png'>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [Deployed Project](https://art-party.vercel.app/)
 
-## Available Scripts
+## Overview
+Art Party is how the most sophisticated, discerning art history buffs get their meme jollies. Simply click on your favorite oeuvre to get started!  The goal of this project is to create a React application that allows users to browse through a collection of paintings and see what piques their interest!  Users can click on a specific painting and view its details or create their own meme!  If a user is particularly fond of their meme, they can save it to their gallery.  The user can use the browsers forward and back arrows or click the home button/Art Party logo to return to the home page.  We have added in error handling for server side errors.
 
-In the project directory, you can run:
+## Project Context
+We are Mod 3 students in the Front-End Program at [Turing School of Software and Design](https://frontend.turing.edu/). Art Party is our second React application.
 
-### `npm start`
+Learning Goals for this project included:      
+✔️ Use at least one external API      
+✔️ Implement a “Stretch Technology” Global State Management: Context API
+✔️ Create a multi page engaging UX using React Router 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Link to Project Description](https://frontend.turing.edu/projects/module-3/stretch.html)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
+![Art-Party-GIF](https://user-images.githubusercontent.com/102934145/200423122-94695f69-cf70-469a-9f73-f307b675d72b.gif)
 
-### `npm test`
+## Setup
+1. From your terminal, `cd` back to your parent directory
+2. Clone down this repository:
+  ```
+  https://github.com/alyciacan/stretch-tech
+  ```
+3. `cd` into `art-party` directory and run:
+  ```
+  npm install
+  npm start
+  ```
+4. Enter the following url in your browser: http://localhost:3000/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) 
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) 
+![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e) 
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black) 
+![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) 
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-### `npm run build`
+## Future Features
+- [x] Add a user login page
+- [x] Add a POST for users to add their own paintings
+- [x] Add a way for user to edit existing memes and download them
+- [x] Zoom-in for existing memes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dev Notes
+### Wins
+- [x] Excellent group dynamic and communication
+- [x] Navigating through merge conflicts and maintaining git workflow 
+- [X] Take advantage of React's context to learn how it offers a way to share information across components, organizing it in a central location and ensuring that any component that requests it can access it (to prevent props drilling information into components).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Opportunities for growth
+- [x] Learning how to stub and intercept with Cypress testing
+- [x] Expanding our knowledge of Cypress syntax
+- [x] Practice using React hooks: UseState & useEffect
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Developed by:
+Jedeo Manirikumwenatwe |
+jedeopastor@gmail.com |
+[Github](https://github.com/Jedeo) |
+[LinkedIn](linkedin.com/in/jedeo) |
 
-### `npm run eject`
+Morgan Berry |
+Morganlyn.berry@gmail.com |
+[Github](https://github.com/Mlberry0205) |
+[LinkedIn](https://www.linkedin.com/in/morgan-lyn-berry/) |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Alycia Canavan |
+alycia.canavan@gmail.com |
+[Github](github.com/alyciacan) |
+[LinkedIn](linkedin.com/in/alycia-canavan) |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project planning & Acknowledgments 
+[Project Board with User Stories](https://github.com/users/alyciacan/projects/5) |
+- ZeroToMastery.io
+- Jordan Sullivan
+- John Boudreaux
+- Meg McBride
+- Shauna MacFarlane-Okongo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
