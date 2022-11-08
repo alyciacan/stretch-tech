@@ -50,7 +50,7 @@ const IndividualPainting = ({ selectedId }) => {
             <Link to="/" className="home-button" >
                 <img src={home} alt="Home button" role="button"/>
             </Link>
-            <div>
+            <div className="panting-title-container">
             <img className="individual-painting-img" src={img} alt={title} />
             <p className="meme-title">{memeTitle}</p>
             </div>

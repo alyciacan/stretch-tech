@@ -24,7 +24,7 @@
 .individual-painting-img {
   display: flex;
   justify-content: center;
-  height: 600px;
+  height: 500px;
   border-radius: 10px;
   color: black;
   margin-left: 5px;
@@ -75,13 +75,12 @@
 .meme-title {
   display: flex;
   position: absolute;
-  top: 28rem;
-  left: 8.8rem;
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
-  inline-size: 20.2rem;
+  inline-size: 18rem;
   word-break: break-all;  
   max-width: 100%;
+  margin-left: 20px;
 }
 
 .meme-form {
@@ -94,7 +93,7 @@
 .home-button {
   font-size: 3rem;
   right: 2%;
-  position: fixed;
+  position: absolute;
   top: 12%;
   border-radius: 20%;
   -webkit-filter: invert(50%);
@@ -104,74 +103,25 @@
   transition: 1s;
   background-color: #FD6A02;
 }
+.panting-title-container{
+  display: flex;
+  align-items: center;
+}
 
-@media screen and (min-width:1110 ) and (max-width: 1200px) {
+
+@media screen and (max-width: 1340px){
   .individual-painting {
+    flex-direction: column;
     margin: 10px;
   }
+}
+
+@media screen and (max-width: 500px){
   .individual-painting-img {
-    border-radius: 10px;
-    height:550px;
-  }
-  .meme-form {
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 1000px){
-  .individual-painting {
-    flex-direction: column;
-    margin: 10px;
+    width: 95vw;
   }
 
-  .meme-title {
-    top: 20rem;
-    left:20rem;
-    font-size: 2.5rem;   
-  }
-}
-
-
-@media screen and (max-width: 525px) {
-  .meme-title {
-    top: 18rem;
-    left:2rem;
-    font-size: 2.5rem;   
-  }
-  .individual-painting {
-    transition: 1s;
-    flex-direction: column;
-    margin: 10px;
-  }
-
-  .home-button {
-    font-size: 3rem;
-    right: 2%;
-    position: fixed;
-    top: 12%;
-    border-radius: 20%;
-  }
   .individual-painting{
-    width: 100vw;
+    width: 95vw;
   }
-
-  .individual-painting-img {
-    border-radius: 10px;
-    width: 100vw;
-  }
-}
-
-@media screen and (min-width: 536px) and (max-width: 760px) {
-
-  .meme-title {
-    top: 18rem;
-    left:12rem;
-    font-size: 2.5rem;    
-  }
-
-  .individual-painting-img {
-    border-radius: 10px;
-    height:550px;
-  }
-
 }
