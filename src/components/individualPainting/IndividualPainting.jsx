@@ -50,14 +50,16 @@ const IndividualPainting = ({ selectedId }) => {
             <Link to="/" className="home-button" >
                 <img src={home} alt="Home button" role="button"/>
             </Link>
+            <div>
             <img className="individual-painting-img" src={img} alt={title} />
+            <p className="meme-title">{memeTitle}</p>
+            </div>
             <div className=".painting-details">
               <h1 className="individual-painting-title">{title}</h1>
               <h2 className="individual-painting-artist">
                 Artist: {artist} | {year}
               </h2>
               <p className="individual-painting-description">{description}</p>
-              <p className="meme-title">{memeTitle}</p>
               <div className="meme-form">
                 <Form saveMeme={saveMeme} getMemeTitle={getMemeTitle} />
               </div>
