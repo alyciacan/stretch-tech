@@ -4,6 +4,8 @@
     font-size: 150%;
     color: white;
     max-width: 20vw;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
   .meme-card {

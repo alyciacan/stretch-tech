@@ -79,6 +79,7 @@
   color: white;
   inline-size: 18rem;
   word-break: break-all;  
+  hyphens: auto;
   max-width: 100%;
   margin-left: 20px;
 }
