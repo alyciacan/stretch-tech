@@ -1,3 +1,5 @@
+const API_key = process.env.REACT_APP_API_KEY;
+
 const checkResponse = (response) => {
 		if (!response.ok) {
 			throw new Error(response.statusText);
@@ -6,12 +8,12 @@ const checkResponse = (response) => {
 	} 
 
 const getAllArt = () => {
-	return fetch("https://www.rijksmuseum.nl/api/en/collection?key=AgQXh8Og&involvedMaker=Rembrandt+van+Rijn")
+	return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${API_key}&p=60&involvedMaker=Rembrandt+van+Rijn`)
 		.then(response => checkResponse(response))
 };
 
 const getSinglePainting = (id) => {
-	return fetch(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=AgQXh8Og`)
+	return fetch(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=${API_key}`)
 	.then(response => checkResponse(response))
 };
 
