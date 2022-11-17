@@ -1,7 +1,7 @@
 import './MemeCard.css';
 
 
-const MemeCard = ({ img, memeTitle, memeId, getDeletedMeme }) => {
+const MemeCard = ({ img, memeTitle, memeId, getDeletedMeme, textColor }) => {
    const background = {
     backgroundImage: `url(${ img })`,
     backgroundSize: 'contain',
@@ -11,7 +11,7 @@ const MemeCard = ({ img, memeTitle, memeId, getDeletedMeme }) => {
 
     return (
         <div className="meme-card" style={ background }>
-            <h3 className="memeTitle">{ memeTitle }</h3>
+            <h3 className="memeTitle" style={ textColor }>{ memeTitle }</h3>
             <span className="meme-delete-button"type='button' onClick={()=> getDeletedMeme(memeId)}>&#10060;</span>
         </div>
     )

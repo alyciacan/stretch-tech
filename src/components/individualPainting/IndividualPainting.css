@@ -93,6 +93,7 @@
 
 .home-button {
   font-size: 3rem;
+  z-index: 2;
   right: 2%;
   position: absolute;
   top: 12%;
