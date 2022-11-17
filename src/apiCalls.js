@@ -8,7 +8,7 @@ const checkResponse = (response) => {
 	} 
 
 const getAllArt = () => {
-	return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${API_key}&p=60&involvedMaker=Rembrandt+van+Rijn`)
+	return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${API_key}&ps=60&involvedMaker=Rembrandt+van+Rijn`)
 		.then(response => checkResponse(response))
 };
 
