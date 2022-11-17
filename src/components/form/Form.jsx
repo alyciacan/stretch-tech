@@ -62,17 +62,17 @@ const Form = ({ getMemeTitle, saveMeme, setTextColor, textColor }) => {
         </div>
         <button
           disabled={!sentence}
-          className="meme-save-button"
-          type="button"
-          onClick={() => clearForm()} >
-          Save Meme
-        </button>
-        <button
-          disabled={!sentence}
           className="text-color-button"
           type="button"
           onClick={() => toggleTextColor()} >
           Change Text Color
+        </button>
+        <button
+          disabled={!sentence}
+          className="meme-save-button"
+          type="button"
+          onClick={() => clearForm()} >
+          Save Meme
         </button>
       </form>
   );
