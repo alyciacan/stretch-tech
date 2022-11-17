@@ -5,7 +5,8 @@
   cursor: pointer;
 }
 
-.meme-save-button {
+.meme-save-button, 
+.text-color-button {
   margin-left: 0.5rem;
   height: 2.5rem;
   width: 8rem;
@@ -16,12 +17,15 @@
   background-color: ghostwhite;
   border-radius: 8px;
 }
-.meme-save-button:hover {
+
+.meme-save-button:hover, 
+.text-color-button:hover {
   transition: 2s;
   background-color: #fd6a02;
   cursor: pointer;
 }
-.meme-save-button:disabled {
+.meme-save-button:disabled,
+.text-color-button:disabled {
   transition: 5s;
   box-shadow: none;
   cursor: auto;
