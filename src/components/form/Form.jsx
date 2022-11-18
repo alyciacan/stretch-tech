@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-const Form = ({ getMemeTitle, saveMeme }) => {
+const Form = ({ getMemeTitle, saveMeme, setTextColor, textColor }) => {
   const [sentence, setSentence] = useState("");
 
   const handleChange = (event) => {
@@ -10,7 +10,7 @@ const Form = ({ getMemeTitle, saveMeme }) => {
   };
 
   const handleMax = () => {
-    const maxLength = 50 - sentence.length
+    const maxLength = 70 - sentence.length
     return maxLength
   };
 
@@ -30,32 +30,48 @@ const Form = ({ getMemeTitle, saveMeme }) => {
   const checkInput = () => {
     if(sentence.length) {
       return (
-        <span style={handleColor()}>
-          Remaining Characters: {handleMax()}
-        </span>
+        // <span style={handleColor()}>
+          `Remaining Characters: ${handleMax()}`
+        // </span>
       )
     }
-  }
+  };
+
+  const toggleTextColor = () => {
+    if(textColor.color === 'white') {
+      setTextColor({ color: 'black'})
+    } else if (textColor.color ==='black') {
+      setTextColor({ color: '#FD6A02'})
+    } else {
+      setTextColor({ color: 'white'})
+    }
+  };
 
   return (
       <form className="form-container">
-        <div className="container">        
+        <div className="input-container">        
           <input
-          maxLength={50}
+          maxLength={70}
           className="meme-input"
           value={sentence}
           type="text"
           placeholder="Enter text here"
           onChange={(event) => handleChange(event)}
         />
-        { checkInput() }
+        <p className="chars-msg" style={handleColor()}>{ checkInput() }</p>
         </div>
+        <button
+          disabled={!sentence}
+          className="text-color-button"
+          type="button"
+          onClick={() => toggleTextColor()} >
+          Change Text Color
+        </button>
         <button
           disabled={!sentence}
           className="meme-save-button"
           type="button"
-          onClick={() => clearForm()}
-        >
+          onClick={() => clearForm()} >
           Save Meme
         </button>
       </form>

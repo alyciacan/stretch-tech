@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { getSinglePainting } from "../../apiCalls";
 import "./IndividualPainting.css";
 import { MemeContext } from "../../contexts/MemeContext";
@@ -9,10 +10,13 @@ import home from "../../images/home.png";
 const IndividualPainting = ({ selectedId }) => {
   const [paintingObject, setPaintingObject] = useState({});
   const [memeTitle, setMemeTitle] = useState("");
+  const [textColor, setTextColor] = useState({ color: 'white' })
+  const error = useHistory();
   
   useEffect(() => {
     const findPainting = () => {
-      getSinglePainting(selectedId).then((response) => {
+      getSinglePainting(selectedId)
+      .then((response) => {
         const obj = {
           id: response.artObject.id,
           title: response.artObject.title,
@@ -22,7 +26,8 @@ const IndividualPainting = ({ selectedId }) => {
           year: response.artObject.dating.presentingDate,
         };
         setPaintingObject(obj);
-      });
+      })
+      .catch(() => error.push('/error'))
     };
     findPainting();
   }, []);
@@ -35,7 +40,7 @@ const IndividualPainting = ({ selectedId }) => {
   };
 
   const saveMeme = () => {
-    setMemes([{ memeTitle, img, memeId: Date.now() }, ...memes]);
+    setMemes([{ memeTitle, img, memeId: Date.now(), textColor }, ...memes]);
     setMemeTitle("");
   };
 
@@ -52,7 +57,7 @@ const IndividualPainting = ({ selectedId }) => {
             </Link>
             <div className="panting-title-container">
             <img className="individual-painting-img" src={img} alt={title} />
-            <p className="meme-title">{memeTitle}</p>
+            <p className="meme-title" style={textColor}>{memeTitle}</p>
             </div>
             <div className=".painting-details">
               <h1 className="individual-painting-title">{title}</h1>
@@ -61,7 +66,7 @@ const IndividualPainting = ({ selectedId }) => {
               </h2>
               <p className="individual-painting-description">{description}</p>
               <div className="meme-form">
-                <Form saveMeme={saveMeme} getMemeTitle={getMemeTitle} />
+                <Form saveMeme={saveMeme} getMemeTitle={getMemeTitle} setTextColor={setTextColor} textColor={textColor}/>
               </div>
             </div>
           </React.Fragment>

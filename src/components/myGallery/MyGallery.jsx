@@ -23,6 +23,7 @@ const MyGallery = () => {
             img={meme.img}
             memeTitle={meme.memeTitle}
             key={meme.memeId}
+            textColor={meme.textColor}
             />
             )
     });

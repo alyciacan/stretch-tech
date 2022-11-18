@@ -78,7 +78,7 @@
   font-size: 2rem;
   color: white;
   inline-size: 18rem;
-  word-break: break-all;  
+  /* word-break: break-all;   */
   hyphens: auto;
   max-width: 100%;
   margin-left: 20px;
@@ -93,18 +93,19 @@
 
 .home-button {
   font-size: 3rem;
+  z-index: 2;
   right: 2%;
   position: absolute;
   top: 12%;
   border-radius: 20%;
-  -webkit-filter: invert(50%);
 }
 
 .home-button:hover {
   transition: 1s;
   background-color: #FD6A02;
 }
-.panting-title-container{
+
+.painting-title-container {
   display: flex;
   align-items: center;
 }
