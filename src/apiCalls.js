@@ -8,7 +8,7 @@ const checkResponse = (response) => {
 	} 
 
 const getAllArt = () => {
-	return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${API_key}&ps=50&type=painting`)
+	return fetch(`https://www.rijksmuseum.nl/api/en/collection?key=${API_key}&ps=75&type=painting`)
 		.then(response => checkResponse(response))
 };
 
