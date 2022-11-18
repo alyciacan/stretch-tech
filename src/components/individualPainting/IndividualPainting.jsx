@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { getSinglePainting } from "../../apiCalls";
 import "./IndividualPainting.css";
 import { MemeContext } from "../../contexts/MemeContext";
@@ -10,10 +11,12 @@ const IndividualPainting = ({ selectedId }) => {
   const [paintingObject, setPaintingObject] = useState({});
   const [memeTitle, setMemeTitle] = useState("");
   const [textColor, setTextColor] = useState({ color: 'white' })
+  const error = useHistory();
   
   useEffect(() => {
     const findPainting = () => {
-      getSinglePainting(selectedId).then((response) => {
+      getSinglePainting(selectedId)
+      .then((response) => {
         const obj = {
           id: response.artObject.id,
           title: response.artObject.title,
@@ -23,7 +26,8 @@ const IndividualPainting = ({ selectedId }) => {
           year: response.artObject.dating.presentingDate,
         };
         setPaintingObject(obj);
-      });
+      })
+      .catch(() => error.push('/error'))
     };
     findPainting();
   }, [paintingObject, selectedId]);
