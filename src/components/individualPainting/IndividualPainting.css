@@ -14,20 +14,18 @@
   box-sizing: border-box;
   display: flex;
   transition: 1s;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   margin-top: 8em;
   margin-left: 6em;
   margin-right: 6em;
 }
 
 .individual-painting-img {
-  display: flex;
-  justify-content: center;
   height: 500px;
   border-radius: 10px;
   color: black;
-  margin-left: 5px;
+  margin-top: 4rem;
 }
 
 .painting-details {
@@ -75,6 +73,7 @@
 .meme-title {
   display: flex;
   position: absolute;
+  bottom: 15rem;
   font-size: 2rem;
   color: white;
   inline-size: 18rem;
@@ -118,12 +117,17 @@
   }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 900px){
   .individual-painting-img {
     width: 95vw;
+   
   }
 
   .individual-painting{
     width: 95vw;
+  }
+
+  .painting-title-container{
+    height: 60vh;
   }
 }

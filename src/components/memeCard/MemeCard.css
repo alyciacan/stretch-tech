@@ -2,9 +2,7 @@
     display: flex;
     text-align: center;
     font-size: 150%;
-    /* color: white; */
     max-width: 20vw;
-    /* overflow-wrap: break-word; */
     hyphens: auto;
 }
 
@@ -16,10 +14,13 @@
     max-height: 65vh;
     overflow: none;
     box-shadow: 0px 15px 5px -5px rgba(0,0,0,0.2);
+    z-index: 6;
   }
 
   .meme-delete-button {
     align-self:auto;
+    z-index: 0;
+    position: absolute;
   }
 
   .meme-delete-button:hover {
@@ -29,6 +30,7 @@
   .meme-card:hover {
     transform: translateY(-10px);
     transition: transform 250ms;
+    z-index: 1;
 
   }
 
