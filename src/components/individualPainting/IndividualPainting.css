@@ -98,14 +98,14 @@
   position: absolute;
   top: 12%;
   border-radius: 20%;
-  -webkit-filter: invert(50%);
 }
 
 .home-button:hover {
   transition: 1s;
   background-color: #FD6A02;
 }
-.panting-title-container{
+
+.painting-title-container {
   display: flex;
   align-items: center;
 }

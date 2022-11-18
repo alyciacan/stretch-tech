@@ -30,7 +30,7 @@ const IndividualPainting = ({ selectedId }) => {
       .catch(() => error.push('/error'))
     };
     findPainting();
-  }, [paintingObject, selectedId]);
+  }, []);
 
   const { id, title, description, img, artist, year } = paintingObject;
   const { memes, setMemes } = useContext(MemeContext);
